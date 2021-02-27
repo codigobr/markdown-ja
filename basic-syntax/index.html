@@ -1,0 +1,2683 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69958365-6"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-69958365-6');
+    </script>
+    <!-- Auto ads - Google -->
+    <script data-ad-client="ca-pub-3427355473051563" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="canonical" href="https://ja.markdown.net.br/basic-syntax/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="author" content="Robert Salles">
+    <meta name="description" content="見出し/見出し、段落、リストなどをフォーマットする方法。すべてのプログラマーにとって不可欠なMarkdownガイド。 ✓簡単✓シンプル＆✓高速。">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ja.markdown.net.br/basic-syntax/">
+    <meta property="og:title" content="Markdown®基本：構文、使用法、例[ステップバイステップ]">
+    <meta property="og:description" content="見出し/見出し、段落、リストなどをフォーマットする方法。すべてのプログラマーにとって不可欠なMarkdownガイド。 ✓簡単✓シンプル＆✓高速。">
+    <meta property="og:image" content="https://markdown.net.br/assets/img/markdown.jpg">
+
+    <title>Markdown®基本：構文、使用法、例[ステップバイステップ]</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2196f3">
+    <meta name="msapplication-TileColor" content="#2196f3">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#2196f3">
+    <!-- CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.css" integrity="sha256-nOfkEPu/TzBvIxN8D/vW8weOUczzDbxRjgik/hA2hBI=" crossorigin="anonymous" />
+    <style type="text/css">
+    	.mv-40 {
+    		margin-top: 40px;
+    		margin-bottom: 40px;
+    	}
+
+    	img[src=""],
+    	img:not([src]) {
+    	  visibility: hidden;
+    	}
+
+    	.caption {
+    	    display: flex;
+    	    justify-content: center;
+    	    align-items: center;
+    	    margin: 10px 0;
+    	    color: hsl(0deg 0% 33%);
+    	    font-style: italic;
+    	    font-size: 75%;
+    	}
+
+    	picture {
+    		display: block;
+    		position: relative;
+    	}
+
+    	.cover-link {
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    	}
+    </style>
+  </head>
+  <body class="themes" cz-shortcut-listen="true">
+    <header>
+      <div class="container">
+  <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger waves-effect waves-light circle">
+  <i class="material-icons">menu</i>
+  </a>
+</div>
+<ul id="nav-mobile" class="sidenav">
+  <li class="logo blue">
+    <a id="logo-container" href="/" class="brand-logo">
+    <img src="https://markdown.net.br/assets/img/markdown-logo-transparent.svg" height="100">
+    </a>
+  </li>
+  <li class="push-it-down"></li>
+  <li class="search white">
+    <div class="search-wrapper">
+      <input id="search" placeholder="Buscar"><i class="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li>
+  <li class="bold white">
+    <a href="/intro/" class="waves-effect waves-blue"><i class="tiny material-icons">child_care</i>前書き</a>
+  </li>
+  <li class="bold white">
+    <a href="/basic-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">short_text</i>基本構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/extended-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">format_align_left</i>拡張構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/cheatsheet/" class="waves-effect waves-blue"><i class="tiny material-icons">help_outline</i>クイックリファレンス</a>
+  </li>
+  <li class="bold white">
+    <a href="/tools/" class="waves-effect waves-blue"><i class="tiny material-icons">card_travel</i>ツール</a>
+  </li>
+</ul>
+    </header>
+    <main>
+      <div class="section" id="index-banner">
+        <div class="container">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m6 l7 offset-m1 offset-l1">
+              <h1>Markdownの基本構文</h1>
+              <h4 class="light">この記事では、Markdown言語の基礎を形成する要素について学習します。</h4>
+              <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" href="https://markdown.net.br/">
+                      <span itemprop="name">Markdown</span></a>
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li>
+<i class="fas fa-chevron-right chevron-separator"></i>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<span itemprop="name">Markdownの基本構文</span>
+<meta itemprop="position" content="2" />
+</li>
+
+              </ol>
+            </div>
+            <div class="col s12 m5 l4 mt-s-30" align="center">
+            	<!-- square-fixed-300-250 -->
+            	<ins class="adsbygoogle"
+            	     style="display:inline-block;width:300px;height:250px"
+            	     data-ad-client="ca-pub-3427355473051563"
+            	     data-ad-slot="1035906960"></ins>
+            	<script>
+            	     (adsbygoogle = window.adsbygoogle || []).push({});
+            	</script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!--  Outer row  -->
+        <div class="row">
+          <div class="section col s12 m8 offset-m1 xl7 offset-xl1">
+            <div class="row scrollspy">
+    <div class="col s12">
+        <h2 id="overview">概要概要</h2>
+
+        <p>いくつかのバリエーションはありますが、ほとんどのアプリケーションはMarkdownの基本要素をサポートしています。これらの要素は、ドキュメントをフォーマットできるようにするために不可欠です。しかし、間違いなく、Markdownの基本だけを使用して、Web用に適切に設計されたWebサイトを作成することができます。</p>
+
+        <blockquote><b>注</b>：可能な場合は常に、あるMarkdownプロセッサから別のプロセッサへの構文のバリエーションがある場合、これらは記事に記載されます。</blockquote>
+
+        <h2 id="headings">タイトル</h2>
+
+        <p>すべてのドキュメントにタイトルが付いている、またはあるべきですよね？それでは、それから始めましょう。</p>
+
+        <p>Markdownでタイトルをフォーマットするために使用される記号は、単語タグ<code class="lang-markdown">＃</code>です。タイトルを作成するときは、行の先頭にハッシュを配置し、ヘッダーを区切ってコードをフォーマットします。</p>
+
+        <p>例えば：</p>
+
+        <div class="code-example">
+	<pre class="lang-markdown"><code># レベル1タイトル</code></pre>
+	<a href="/editor/?markdown=%23%20%E3%83%AC%E3%83%99%E3%83%AB1%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+        <p>HTMLからtag <code class="lang-html">h1</code>に変換されます。</p>
+
+        <pre class="lang-html"><code>&lt;h1&gt;レベル1タイトル&lt;/h1&gt;</code>.</pre>
+
+        <div class="image-container">
+            <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-MarkdownのタイトルH1をHTMLに変換"
+		        	title="Markdownチュートリアル-MarkdownのタイトルH1をHTMLに変換"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-h1_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownのタイトルH1をHTMLに変換</span>
+		</figcaption>
+		</figure>
+        </div>
+
+        <blockquote><b>注</b>：tag <code class="lang-html">h1</code>は、HTMLの最も重要なタイトル、通常は記事のタイトルを表します。</blockquote>
+
+        <p>行の先頭で使用するハッシュの数はタイトルのレベルを示しているため、<code class="lang-markdown">### Mytitle</code>という形式でレベル3の見出しが作成されます。</p>
+
+        <p class="mv-40">
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-3427355473051563"
+                 data-ad-slot="3854885260"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </p>
+
+        <blockquote><b>注</b>：レベルについて話すときは、HTMLに変換されたタイトルについて話します。 HTMLでは、タイトルレベルの範囲は1〜6で、tags <code class="lang-html">h1</code>、<code class="lang-html">h2</code>、<code class="lang-html">h3</code>、<code class="lang-html">h4</code>、<code class="lang-html">h5</code>、<code class="lang-html">h6</code></blockquote>
+
+        <p class="mt-60"><b>例</b></p>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code># レベル1タイトル</code></pre>
+	<a href="/editor/?markdown=%23%20%E3%83%AC%E3%83%99%E3%83%AB1%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h1&gt;レベル1タイトル&lt;/h1&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h1-like">レベル1タイトル</span>
+            </div>
+        </div>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>## レベル2のタイトル</code></pre>
+	<a href="/editor/?markdown=%23%23%20%E3%83%AC%E3%83%99%E3%83%AB2%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h2&gt;レベル2のタイトル&lt;/h2&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h2-like">レベル2のタイトル</span>
+            </div>
+        </div>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>### レベル3のタイトル</code></pre>
+	<a href="/editor/?markdown=%23%23%23%20%E3%83%AC%E3%83%99%E3%83%AB3%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h3&gt;レベル3のタイトル&lt;/h3&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h3-like">レベル3のタイトル</span>
+            </div>
+        </div>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>#### レベル4のタイトル</code></pre>
+	<a href="/editor/?markdown=%23%23%23%23%20%E3%83%AC%E3%83%99%E3%83%AB4%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h4&gt;レベル4のタイトル&lt;/h4&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h4-like">レベル4のタイトル</span>
+            </div>
+        </div>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>##### レベル5のタイトル</code></pre>
+	<a href="/editor/?markdown=%23%23%23%23%23%20%E3%83%AC%E3%83%99%E3%83%AB5%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h5&gt;レベル5のタイトル&lt;/h5&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h5-like">レベル5のタイトル</span>
+            </div>
+        </div>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>###### レベル6のタイトル</code></pre>
+	<a href="/editor/?markdown=%23%23%23%23%23%23%20%E3%83%AC%E3%83%99%E3%83%AB6%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h6&gt;レベル6のタイトル&lt;/h6&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h6-like">レベル6のタイトル</span>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-StackEditのMarkdownタイトル"
+		        	title="Markdownチュートリアル-StackEditのMarkdownタイトル"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-headings_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>トリアル-StackEditのMarkdownタイトル</span>
+		</figcaption>
+		</figure>
+        </div>
+
+        <h3 id="headings-alternative-syntax">代替構文</h3>
+
+        <p>Markdownは、レベル1と2の見出しを作成するための異なる構文を提供します。行の先頭にハッシュを使用する代わりに、レベル1の見出しの下に等号<code class="lang-text">==</code>を追加し、レベルにマイナス記号<code class="lang-text">-</code>を追加します。 2つのヘッダー。</p>
+
+        <div class="image-container">
+            <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-レベル1およびレベル見出しを作成するための代替構文"
+		        	title="Markdownチュートリアル-レベル1およびレベル見出しを作成するための代替構文"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>レベル1およびレベル見出しを作成するための代替構文</span>
+		</figcaption>
+		</figure>
+        </div>
+
+        <p class="mt-60"><b>例</b></p>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>レベル1タイトル
+===============</code></pre>
+	<a href="/editor/?markdown=%E3%83%AC%E3%83%99%E3%83%AB1%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%0D%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h1&gt;レベル1タイトル&lt;/h1&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h1-like">レベル1タイトル</span>
+            </div>
+        </div>
+
+        <div class="code-comparison">
+            <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>レベル2のタイトル
+---------------</code></pre>
+	<a href="/editor/?markdown=%E3%83%AC%E3%83%99%E3%83%AB2%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%0D%0A%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+            <pre class="lang-html"><code>&lt;h2&gt;レベル1タイトル&lt;/h2&gt;</code></pre>
+            <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+            <div class="code-sample">
+                <span class="h2-like">レベル2のタイトル</span>
+            </div>
+        </div>
+
+        <p>一部のMarkdownエディターでは、テキストの下に等号<code class="lang-plaintext">=</code>またはダッシュ<code class="lang-plaintext">-</code>のみを使用できますが、これにより、この構文と互換性のない他のエディターでフォーマットの問題が発生する可能性があります。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-1つの記号のみを使用するタイトルの代替構文"
+		        	title="Markdownチュートリアル-1つの記号のみを使用するタイトルの代替構文"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-alternative-syntax-2_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>1つの記号のみを使用する見出しの代替構文</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <h3 id="headings-best-practices">タイトル：ベストプラクティス</h3>
+
+            <p>行頭のハッシュ記号<code class="lang-text">＃</code>とタイトルテキストの間のスペースについて話すと、互換性の問題が発生する可能性があります。</p>
+
+            <p>ドキュメントをより読みやすくすることに加えて、それらの間に少なくとも1つのスペースを追加することを常にお勧めします。それでも、Markdownアプリケーション間でより多くの編集サポートを利用できます。</p>
+
+            <p class="mv-40">
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-3427355473051563"
+                     data-ad-slot="3854885260"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </p>
+
+            <p><a href="#table-1-3">表1.3</a>は、タイトルの正しい構成を例示しています。</p>
+
+            <table class="responsive-table" id="table-1-3">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td># 私の記事のタイトル</td>
+                        <td>#私の記事のタイトル</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.3-Markdownで見出し/見出しを作成する際の正しい使用法。</small>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w501.webp 501w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w426.webp 426w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w351.webp 351w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w276.webp 276w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w201.webp 201w"
+		         sizes="(max-width: 501px) 100vw, 501px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownで正しい方法でタイトルを作成する"
+		        	title="Markdownチュートリアル-Markdownで正しい方法でタイトルを作成する"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w501.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w501.png 501w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w426.png 426w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w351.png 351w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w276.png 276w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w201.png 201w"
+		         	sizes="(max-width: 501px) 100vw, 501px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-headings-correct-syntax_w501.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownで正しい方法でタイトルを作成する</span>
+		</figcaption>
+		</figure>
+            </div>
+
+
+            <h2 id="paragraphs">段落</h2>
+
+            <p>Markdownの最も単純なフォーマットは、段落のフォーマットです。 1つを作成するには、テキストを空白行で区切って、Markdownプロセッサが段落として解釈する断片化を作成します。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w579.webp 579w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w484.webp 484w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w389.webp 389w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w294.webp 294w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w199.webp 199w"
+		         sizes="(max-width: 579px) 100vw, 579px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-段落"
+		        	title="Markdownチュートリアル-段落"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w579.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w579.png 579w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w484.png 484w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w389.png 389w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w294.png 294w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w199.png 199w"
+		         	sizes="(max-width: 579px) 100vw, 579px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph_w579.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownの段落</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>Markdownは、すべてのプログラマーにとって重要です。
+
+Markdownを学ぶことは、キャリアを成功させるために不可欠です。</code></pre>
+	<a href="/editor/?markdown=Markdown%E3%81%AF%E3%80%81%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AB%E3%81%A8%E3%81%A3%E3%81%A6%E9%87%8D%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82%0D%0A%0D%0AMarkdown%E3%82%92%E5%AD%A6%E3%81%B6%E3%81%93%E3%81%A8%E3%81%AF%E3%80%81%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%92%E6%88%90%E5%8A%9F%E3%81%95%E3%81%9B%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB%E4%B8%8D%E5%8F%AF%E6%AC%A0%E3%81%A7%E3%81%99%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+
+                <pre class="lang-html"><code>&lt;p&gt;Markdownは、すべてのプログラマーにとって重要です。&lt;/p&gt;
+
+&lt;p&gt;Markdownを学ぶことは、キャリアを成功させるために不可欠です。&lt;p&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <p>Markdownは、すべてのプログラマーにとって重要です。</p>
+                    <p>Markdownを学ぶことは、キャリアを成功させるために不可欠です。</p>
+                </div>
+            </div>
+
+
+
+            <h3 id="paragraphs-best-practices">段落：ベストプラクティス</h3>
+
+            <p>通常、段落は行の先頭に固定されます。つまり、空白やタブなど、あらゆる種類のスペースを使用して段落をインデントすることは避けてください。</p>
+
+            <blockquote><b>注</b>：段落がリスト内にある場合は、段落をインデントする必要があります。</blockquote>
+
+            <p class="mv-40">
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-3427355473051563"
+                     data-ad-slot="3854885260"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </p>
+
+            <p><a href="#table-1-5">表1.5</a>は、段落を作成するための正しい使用法を例示しています。</p>
+
+            <table class="responsive-table" id="table-1-5">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            段落の前に空白やタブを使用しないでください。<br><br>
+                            段落は左揃えにする必要があります。<br><br>
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;これらのスペースは、Markdownアプリケーションによってはフォーマットの問題を引き起こす可能性があります。<br><br>
+                            &nbsp;&nbsp;どちらの集計もお勧めしません。
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.5-Markdownで段落を作成するときに行うことと行わないこと。</small>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-間違った段落構文"
+		        	title="Markdownチュートリアル-間違った段落構文"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-paragraph-wrong-syntax_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			
+		</figure>
+            </div>
+
+            <h2 id="line-break">改行</h2>
+
+            <p>HTMLでは、改行はtag <code class="lang-html">br</code>で表されます。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/html-line-break_w1037.webp 1037w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w917.webp 917w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w797.webp 797w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w677.webp 677w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w557.webp 557w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w437.webp 437w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w317.webp 317w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w197.webp 197w"
+		         sizes="(max-width: 677px) 100vw, 677px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-HTMLの改行"
+		        	title="Markdownチュートリアル-HTMLの改行"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/html-line-break_w1037.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/html-line-break_w1037.png 1037w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w917.png 917w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w797.png 797w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w677.png 677w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w557.png 557w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w437.png 437w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w317.png 317w,
+https://markdown.net.br/assets/img/basic-syntax/html-line-break_w197.png 197w"
+		         	sizes="(max-width: 677px) 100vw, 677px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/html-line-break_w1037.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>HTMLの改行</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p>Markdownで改行を生成するには、行の終わりに2つ以上の空白スペースを挿入し、<code class="lang-plaintext">Enter</code>キーを押します。</p>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>ドキュメントの最初の行。
+ドキュメントの2行目。</code></pre>
+	<a href="/editor/?markdown=%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E8%A1%8C%E3%80%82%0D%0A%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE2%E8%A1%8C%E7%9B%AE%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;p&gt;ドキュメントの最初の行。&lt;br&gt;<br>
+ドキュメントの2行目。&lt;/p&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <p>ドキュメントの最初の行。<br>
+                        ドキュメントの2行目。
+                    </p>
+                </div>
+            </div>
+
+            <h3 id="line-break-best-practices">改行：ベストプラクティス</h3>
+
+            <p>ほとんどのアプリケーションと互換性がありますが、空白を使用して改行を作成すると、フォーマットの問題が発生する可能性があります。</p>
+
+            <p>ここにいくつかのポイントがあります：</p>
+
+            <ul class="collection">
+                <li class="collection-item green lighten-5">行の後の空白は気づきにくいです。</li>
+                <li class="collection-item yellow lighten-5">習慣や不注意により、行末に空白を追加することができます。</li>
+                <li class="collection-item">
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-3427355473051563"
+                         data-ad-slot="3854885260"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </li>
+                <li class="collection-item green lighten-5">Sublime Textなどの一部のテキストエディタには、ドキュメントを保存するときに行の前後の空白を削除する設定があります。</li>
+            </ul>
+
+            <p>改行の問題を回避するための実行可能な代替手段として、ドキュメントで直接tag HTML <code class="lang-html">br</code>を使用するだけです。</p>
+
+            <blockquote><b>注</b>：ほとんどのMarkdownアプリケーションはHTMLのtagsとも互換性があることを覚えておくことは興味深いです。つまり、同じドキュメント内でMarkdownフォーマットとHTMLフォーマットをマージできます。</blockquote>
+
+            <blockquote><b>注</b>：一部のアプリケーションでは、<code class="lang-plaintext">Enter</code>キーを押すだけで改行を作成できます。</blockquote>
+
+            <blockquote><b>注</b>：CommonMarkなどのMarkdownのバリエーションは、バックスラッシュ<code class="lang-text">\</code>の使用を改行のインジケーターとして解釈します。</blockquote>
+
+            <p><code class="lang-plaintext">Enter</code>キーを押すか、バックスラッシュ<code class="lang-plaintext">\</code>を使用することは有効ですが、互換性はMarkdownプログラムに依存するため、お勧めしません。</p>
+
+            <p><a href="#table-1-7">表1.7</a>は、改行を作成するための正しい構文を示しています。</p>
+
+            <table class="responsive-table" id="table-1-7">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            行の後の2つのスペース。<code class="lang-text"> </code><code class="lang-text"> </code><br>
+                            改行が挿入されました。<br><br>
+                            HTMLタグを使用して行を分割します。<code class="lang-html">&lt;br&gt;</code><br>
+                            改行が挿入されました。<br><br>
+                        </td>
+                        <td>
+                            バックスラッシュを使用して行を区切ります。\<br>
+                            改行が挿入されました。<br><br>
+                            Enterキーを押すだけで改行します。<code class="lang-text">Enter</code><br>
+                            改行が挿入されました。<br><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.7-Markdownで改行を生成する正しい方法。</small>
+
+
+            <h2 id="emphasis">強調</h2>
+
+            <p>Microsoft WordなどのWYSIWYGエディターと同様に、Markdownもテキストを強調するためのフォーマットを提供します。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w564.webp 564w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w473.webp 473w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w382.webp 382w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w291.webp 291w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w200.webp 200w"
+		         sizes="(max-width: 564px) 100vw, 564px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Microsoft Wordでのフォーマットの強調"
+		        	title="Markdownチュートリアル-Microsoft Wordでのフォーマットの強調"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w564.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w564.png 564w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w473.png 473w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w382.png 382w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w291.png 291w,
+https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w200.png 200w"
+		         	sizes="(max-width: 564px) 100vw, 564px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/microsoft-word-emphasis-formatting_w564.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Microsoft Wordでの強調フォーマット</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p>最も一般的な強調形式には、太字と斜体があり、Markdown構文を使用して適用することもできます。</p>
+
+            <h3 id="bold">Markdownで太字</h3>
+
+            <p>Markdownで太字のテキストをフォーマットするには、コンテンツの前に2つのアスタリスク<code class="lang-plaintext">**</code>を配置し、コンテンツの後に2つのアスタリスク<code class="lang-plaintext">**</code>を配置します。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w853.webp 853w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w760.webp 760w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w667.webp 667w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w574.webp 574w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w481.webp 481w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w388.webp 388w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w295.webp 295w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w202.webp 202w"
+		         sizes="(max-width: 760px) 100vw, 760px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownで太字"
+		        	title="Markdownチュートリアル-Markdownで太字"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w853.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w853.png 853w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w760.png 760w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w667.png 667w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w574.png 574w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w481.png 481w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w388.png 388w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w295.png 295w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w202.png 202w"
+		         	sizes="(max-width: 760px) 100vw, 760px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-bold_w853.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownで太字</span>
+		</figcaption>
+		</figure>
+            </div>
+
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>**This part of the text** will be bold.</code></pre>
+	<a href="/editor/?markdown=%2A%2AThis%20part%20of%20the%20text%2A%2A%20will%20be%20bold%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;strong&gt;This part of the text&lt;/strong&gt; will be bold.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <strong>This part of the text</strong> will be bold.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>__This part of the text__ will be bold.</code></pre>
+	<a href="/editor/?markdown=__This%20part%20of%20the%20text__%20will%20be%20bold%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;strong&gt;This part of the text&lt;/strong&gt; will be bold.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <strong>This part of the text</strong> will be bold.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>Markdown**Is**Easy**To**Learn</code></pre>
+	<a href="/editor/?markdown=Markdown%2A%2AIs%2A%2AEasy%2A%2ATo%2A%2ALearn" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>Markdown&lt;strong&gt;Is&lt;/strong&gt;Easy&lt;strong&gt;To&lt;/strong&gt;Learn</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    Markdown<strong>Is</strong>Easy<strong>To</strong>Learn
+                </div>
+            </div>
+
+            <blockquote><b>注</b>：上記の例に示すように、コンテンツの前後に2つのアンダースコア<code class="lang-plaintext">__</code>を使用すると、アスタリスクをアンダースコアに置き換えることができます。また、Markdownではテキストが太字でフォーマットされます。</blockquote>
+
+            <h3 id="bold-best-practices">太字：ベストプラクティス</h3>
+
+            <p>2つのアスタリスクと2つのアンダースコアの両方を使用すると、コンテンツに太字の書式を適用できます。</p>
+
+            <p>ただし、単語の途中でアンダースコアを使用すると、Markdownプロセッサによってはフォーマットの問題が発生する可能性があるため、アスタリスクを使用することをお勧めします。</p>
+
+            <p class="mv-40">
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-3427355473051563"
+                     data-ad-slot="3854885260"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </p>
+
+            <p><a href="#table-1-9">表1.9</a>は、太字のフォーマットの推奨される使用法を示しています。</p>
+
+            <table class="responsive-table" id="table-1-9">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            markdown**is**simple
+                        </td>
+                        <td>
+                            markdown__is__simple
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.9-Markdownで太字でフォーマットするための推奨構文。</small>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w852.webp 852w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w759.webp 759w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w666.webp 666w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w573.webp 573w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w480.webp 480w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w387.webp 387w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w294.webp 294w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w201.webp 201w"
+		         sizes="(max-width: 759px) 100vw, 759px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-コンテンツの途中で太字"
+		        	title="Markdownチュートリアル-コンテンツの途中で太字"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w852.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w852.png 852w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w759.png 759w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w666.png 666w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w573.png 573w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w480.png 480w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w387.png 387w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w294.png 294w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w201.png 201w"
+		         	sizes="(max-width: 759px) 100vw, 759px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-best-practices_w852.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>コンテンツの途中で太字</span>
+		</figcaption>
+		</figure>
+            </div>
+
+
+            <h3 id="italics">Markdownのイタリック</h3>
+
+            <p>太字と同様に、Markdownの斜体フォーマットでも、アスタリスク<code class="lang-plaintext">*</code>またはアンダースコア<code class="lang-plaintext">_</code>が使用されますが、斜体の場合は、コンテンツの前にアスタリスク<code class="lang-plaintext">*</code>を使用します。コンテンツの後のアスタリスク<code class="lang-plaintext">*</code>。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w847.webp 847w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w755.webp 755w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w663.webp 663w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w571.webp 571w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w479.webp 479w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w387.webp 387w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w295.webp 295w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w203.webp 203w"
+		         sizes="(max-width: 755px) 100vw, 755px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownのイタリック"
+		        	title="Markdownチュートリアル-Markdownのイタリック"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w847.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w847.png 847w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w755.png 755w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w663.png 663w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w571.png 571w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w479.png 479w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w387.png 387w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w295.png 295w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w203.png 203w"
+		         	sizes="(max-width: 755px) 100vw, 755px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-italics_w847.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownのイタリックフォーマットの構文</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>*This part of the text* will be in italics.</code></pre>
+	<a href="/editor/?markdown=%2AThis%20part%20of%20the%20text%2A%20will%20be%20in%20italics%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;em&gt;This part of the text&lt;/em&gt; will be in italics.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <em>This part of the text</em> will be in italics.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>_This part of the text_ will be in italics.</code></pre>
+	<a href="/editor/?markdown=_This%20part%20of%20the%20text_%20will%20be%20in%20italics%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;em&gt;This part of the text&lt;/em&gt; will be in italics.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <em>This part of the text</em> will be in italics.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>Markdown*Is*Easy*To*Learn</code></pre>
+	<a href="/editor/?markdown=Markdown%2AIs%2AEasy%2ATo%2ALearn" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>Markdown&lt;em&gt;Is&lt;/em&gt;Easy&lt;em&gt;To&lt;/em&gt;Learn</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    Markdown<em>Is</em>Easy<em>To</em>Learn
+                </div>
+            </div>
+
+            <p>Markdownの単語の途中をイタリック体にするには、コンテンツの前後にアスタリスクを使用します。</p>
+
+            <p>例：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>Mar*kdo*wn</code></pre>
+	<a href="/editor/?markdown=Mar%2Akdo%2Awn" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <h3 id="italics-best-practices">イタリック：ベストプラクティス</h3>
+
+            <p>単語の途中でイタリックを使用する場合は、常にアスタリスク<code class="lang-plaintext">*</code>を使用してください。これにより、Markdownプロセッサとの互換性の問題が回避されます。</p>
+
+            <p><a href="#table-1-11">表1.11</a>は、イタリック体のコンテンツを強調するために推奨されるマークアップを示しています。</p>
+
+            <table class="responsive-table" id="table-1-11">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            markdown*is*simple
+                        </td>
+                        <td>
+                            markdown_is_simple
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.11-イタリックを使用して単語の一部を強調するための推奨フォーマット。</small>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w852.webp 852w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w759.webp 759w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w666.webp 666w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w573.webp 573w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w480.webp 480w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w387.webp 387w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w294.webp 294w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w201.webp 201w"
+		         sizes="(max-width: 759px) 100vw, 759px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownのイタリック体-ベストプラクティス"
+		        	title="Markdownチュートリアル-Markdownのイタリック体-ベストプラクティス"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w852.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w852.png 852w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w759.png 759w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w666.png 666w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w573.png 573w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w480.png 480w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w387.png 387w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w294.png 294w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w201.png 201w"
+		         	sizes="(max-width: 759px) 100vw, 759px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-italics-best-practices_w852.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownのイタリック-単語の中央をフォーマットします。</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <h3 id="bold-italics">太字と斜体</h3>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w850.webp 850w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w757.webp 757w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w571.webp 571w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w478.webp 478w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w385.webp 385w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w292.webp 292w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w199.webp 199w"
+		         sizes="(max-width: 757px) 100vw, 757px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownの太字と斜体"
+		        	title="Markdownチュートリアル-Markdownの太字と斜体"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w850.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w850.png 850w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w757.png 757w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w571.png 571w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w478.png 478w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w385.png 385w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w292.png 292w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w199.png 199w"
+		         	sizes="(max-width: 757px) 100vw, 757px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics_w850.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownの太字と斜体</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p>太字のみですか、それとも斜体のみですか？必要に応じて、2つの形式を組み合わせて、任意のコンテンツを強調表示できます。</p>
+
+            <p>太字と斜体を同時に適用するには、強調表示するテキストの前後に3つのアスタリスク<code class="lang-text">***</code>または3つのアンダースコア<code class="lang-text">___</code>を追加します。</p>
+
+            <p class="mv-40">
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-3427355473051563"
+                     data-ad-slot="3854885260"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </p>
+
+            <p>両方の形式で単語​​の途中を強調する場合は、アスタリスク（この場合は3つのアスタリスク<code class="lang-text">***</code>）の使用を優先します。</p>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>***This part of the text*** will be bold and italicized.</code></pre>
+	<a href="/editor/?markdown=%2A%2A%2AThis%20part%20of%20the%20text%2A%2A%2A%20will%20be%20bold%20and%20italicized%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;strong&gt;&lt;em&gt;This part of the text&lt;/em&gt;&lt;/strong&gt; will be bold and italicized.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <strong><em>This part of the text</em></strong> will be bold and italicized.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>This is really ___important___.</code></pre>
+	<a href="/editor/?markdown=This%20is%20really%20___important___%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>This is really &lt;strong&gt;&lt;em&gt;important&lt;/em&gt;&lt;/strong&gt;.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    This is really <strong><em>important</em></strong>.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>This is really __*important*__.</code></pre>
+	<a href="/editor/?markdown=This%20is%20really%20__%2Aimportant%2A__%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>This is really &lt;strong&gt;&lt;em&gt;important&lt;/em&gt;&lt;/strong&gt;.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    This is really <strong><em>important</em></strong>.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>This is really **_important_**.</code></pre>
+	<a href="/editor/?markdown=This%20is%20really%20%2A%2A_important_%2A%2A%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>This is really &lt;strong&gt;&lt;em&gt;important&lt;/em&gt;&lt;/strong&gt;.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    This is really <strong><em>important</em></strong>.
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>This text is ***really*** important.</code></pre>
+	<a href="/editor/?markdown=This%20text%20is%20%2A%2A%2Areally%2A%2A%2A%20important%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>This text is &lt;strong&gt;&lt;em&gt;really&lt;/em&gt;&lt;/strong&gt; important.</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    This text is <strong><em>really</em></strong> important.
+                </div>
+            </div>
+
+            <h3 id="bold-italics-best-practices">太字と斜体：ベストプラクティス</h3>
+
+            <p>Markdownアプリケーションとの互換性の問題を回避するために、単語の途中を強調表示する場合は、太字と斜体を組み合わせて、3つのアスタリスクの使用を優先します。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w977.webp 977w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w866.webp 866w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w755.webp 755w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w644.webp 644w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w533.webp 533w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w422.webp 422w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w311.webp 311w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w200.webp 200w"
+		         sizes="(max-width: 755px) 100vw, 755px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownの太字と斜体-ベストプラクティス"
+		        	title="Markdownチュートリアル-Markdownの太字と斜体-ベストプラクティス"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w977.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w977.png 977w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w866.png 866w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w755.png 755w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w644.png 644w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w533.png 533w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w422.png 422w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w311.png 311w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w200.png 200w"
+		         	sizes="(max-width: 755px) 100vw, 755px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-bold-italics-best-practices_w977.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownに太字と斜体を適用するための推奨構文。</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p><a href="#table-1-13">表1.13</a>は、両方のフォーマットを組み合わせるための指示された使用法を示しています。</p>
+
+            <table class="responsive-table" id="table-1-13">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Text***Really***Important.
+                        </td>
+                        <td>
+                            Text___Really___Important.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.13-太字と斜体を組み合わせるためのMarkdownフォーマットの推奨される使用法。</small>
+
+
+            <h2 id="blockquote">Blockquote</h2>
+
+            <p>Markdownでコンテンツをブロック引用符としてマークするには、段落の先頭で<code class = "lang-text">&gt;</code>より大きいを使用します。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Blockquote"
+		        	title="Markdownチュートリアル-Blockquote"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownのBlockquote。</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <p>たとえば、次のMarkdownタグ：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>&gt; ブロッククォートの内容。</code></pre>
+	<a href="/editor/?markdown=>%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%82%A9%E3%83%BC%E3%83%88%E3%81%AE%E5%86%85%E5%AE%B9%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>この出力は、HTMLになります。</p>
+
+            <blockquote>
+                <p>ブロッククォートの内容。</p>
+            </blockquote>
+
+            <h3 id="blockquote-muiltiple-paragraphs">複数の段落を持つBlockquote</h3>
+
+            <p>複数の段落を含むブロッククォートが必要な場合は、これらの各段落の前に大なり記号<code class="lang-plaintext">&gt;</code>を使用し、大なり記号のみを含む行で区切ります。</p>
+
+            <div class="image-container">
+                <figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w1280.webp 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w1126.webp 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w972.webp 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w818.webp 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w664.webp 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w510.webp 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w356.webp 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-複数の段落を持つBlockquote"
+		        	title="Markdownチュートリアル-複数の段落を持つBlockquote"
+		         	src="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w1280.png 1280w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w1126.png 1126w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w972.png 972w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w818.png 818w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w664.png 664w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w510.png 510w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w356.png 356w,
+https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/basic-syntax/markdown-blockquote-paragraphs_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>複数の段落を持つBlockquote</span>
+		</figcaption>
+		</figure>
+            </div>
+
+            <blockquote><b>注</b>：Markdownプロセッサがマークアップを正しく解釈できるように、段落を区切る行に大なり記号<code class="lang-text">></code>を配置する必要があります。</blockquote>
+
+            <p>例を見てみましょう：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>&gt; ブロッククォートの最初の段落。
+&gt;
+&gt; ブロッククォートの2番目の段落。</code></pre>
+	<a href="/editor/?markdown=>%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%82%A9%E3%83%BC%E3%83%88%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E6%AE%B5%E8%90%BD%E3%80%82%0D%0A>%0D%0A>%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%82%A9%E3%83%BC%E3%83%88%E3%81%AE2%E7%95%AA%E7%9B%AE%E3%81%AE%E6%AE%B5%E8%90%BD%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>HTMLの出力：</p>
+
+            <blockquote>
+                <p>ブロッククォートの最初の段落。</p>
+                <p>ブロッククォートの2番目の段落。</p>
+            </blockquote>
+
+            <h3 id="blockquote-nested">Blockquotesネスト</h3>
+
+            <p>ブロッククォート内にいくつかの段落を挿入することに加えて、それらをネストすることもできます。つまり、blockquotes内にblockquotesを挿入します。簡単にしましょう。</p>
+
+            <p>ネストされたブロックを作成するには、段落の前に2つの大なり記号<code class="lang-text">>></code>を使用します。</p>
+
+            <p>例：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>&gt; ブロッククォートの内容。
+&gt;
+&gt;&gt; この段落は、ネストされたブロック引用符として解釈されます。</code></pre>
+	<a href="/editor/?markdown=>%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%82%A9%E3%83%BC%E3%83%88%E3%81%AE%E5%86%85%E5%AE%B9%E3%80%82%0D%0A>%0D%0A>>%20%E3%81%93%E3%81%AE%E6%AE%B5%E8%90%BD%E3%81%AF%E3%80%81%E3%83%8D%E3%82%B9%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E5%BC%95%E7%94%A8%E7%AC%A6%E3%81%A8%E3%81%97%E3%81%A6%E8%A7%A3%E9%87%88%E3%81%95%E3%82%8C%E3%81%BE%E3%81%99%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>HTMLでのレンダリング：</p>
+
+            <blockquote>
+                <p>ブロッククォートの内容。</p>
+                <blockquote>
+                    <p>この段落は、ネストされたブロック引用符として解釈されます。</p>
+                </blockquote>
+            </blockquote>
+
+            <h3 id="blockquote-other-elements">他の要素とBlockquote</h3>
+
+            <p>blockquotesの汎用性により、他のMarkdown要素をその中に挿入できます。</p>
+
+            <blockquote><b>注</b>：一部のMarkdown要素は、ブロッククォート内に配置すると正しくレンダリングされない場合があります。これは、Markdownプロセッサ間で大きく異なります。</blockquote>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>&gt; #### ブロック内のタイトルh4
+&gt;
+&gt; - ブロッククォート内のリストの最初の要素。
+&gt; - ブロッククォート内のリストの2番目の要素。
+&gt;
+&gt;  *斜体のテキスト* 書式設定なしの段落の一部 **太字**.</code></pre>
+	<a href="/editor/?markdown=>%20%23%23%23%23%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E5%86%85%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%ABh4%0D%0A>%0D%0A>%20%2D%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%82%A9%E3%83%BC%E3%83%88%E5%86%85%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%80%82%0D%0A>%20%2D%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%82%A9%E3%83%BC%E3%83%88%E5%86%85%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE2%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%E3%80%82%0D%0A>%0D%0A>%20%20%2A%E6%96%9C%E4%BD%93%E3%81%AE%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%2A%20%E6%9B%B8%E5%BC%8F%E8%A8%AD%E5%AE%9A%E3%81%AA%E3%81%97%E3%81%AE%E6%AE%B5%E8%90%BD%E3%81%AE%E4%B8%80%E9%83%A8%20%2A%2A%E5%A4%AA%E5%AD%97%2A%2A%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+            <p>HTMLの出力：</p>
+
+            <blockquote>
+                <h4>ブロック内のタイトルh4</h4>
+                <ul>
+                    <li>ブロッククォート内のリストの最初の要素。</li>
+                    <li>ブロッククォート内のリストの2番目の要素。</li>
+                </ul>
+                <p><strong>太字のテキスト</strong>をフォーマットしない段落の斜体のテキスト部分。</p>
+            </blockquote>
+
+
+            <h2 id="lists">リスト</h2>
+
+            <p>リストは、ドキュメント内のトピックを整理するために不可欠です。リストは、相互に関連している可能性のある要素の視覚化を容易にします。</p>
+
+            <p>Markdownでリストを作成するには、順序付きリストに番号を使用します。つまり、順序付きリストには番号を使用し、ダッシュ<code class="lang-text">-</code>、プラス記号<code class="lang-text">+</code>、または順序なしリストにはアスタリスク<code class="lang-text">*</code>を使用します。</p>
+
+            <h3 id="lists-ordered">注文リスト</h3>
+
+            <p>リストの要素を並べ替えることから始めましょう。そのために、番号の後にピリオドと要素のテキストを続けます。</p>
+
+            <p>要素の番号は番号の昇順である必要はありませんが、リストの最初の要素は番号1 <code class="lang-text">1</code>で始まる必要があることに注意してください。</p>
+
+            <p class="mv-40">
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-3427355473051563"
+                     data-ad-slot="3854885260"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </p>
+
+            <blockquote><b>注</b>：インデントされた要素を作成するには、要素をマークする番号の前にタブを挿入します。一部のMarkdownプロセッサでは、番号付けの前に3つのスペースを挿入することもできます。結果は似ていますが、疑わしい場合はTABを使用すると、アプリケーションによって異なります。</blockquote>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>1. 最初の要素
+2. 2番目の要素
+3. 3番目の要素
+4. 4番目の要素</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A2%2E%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A3%2E%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A4%2E%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ol&gt;
+    &lt;li&gt;最初の要素&lt;/li&gt;
+    &lt;li&gt;2番目の要素&lt;/li&gt;
+    &lt;li&gt;3番目の要素&lt;/li&gt;
+    &lt;li&gt;4番目の要素&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ol>
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>3番目の要素</li>
+                        <li>4番目の要素</li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>1. 最初の要素
+1. 2番目の要素
+1. 3番目の要素
+1. 4番目の要素</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A1%2E%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A1%2E%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A1%2E%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ol&gt;
+    &lt;li&gt;最初の要素&lt;/li&gt;
+    &lt;li&gt;2番目の要素&lt;/li&gt;
+    &lt;li&gt;3番目の要素&lt;/li&gt;
+    &lt;li&gt;4番目の要素&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ol>
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>3番目の要素</li>
+                        <li>4番目の要素</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>1. 最初の要素
+8. 2番目の要素
+3. 3番目の要素
+5. 4番目の要素</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A8%2E%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A3%2E%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A5%2E%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ol&gt;
+    &lt;li&gt;最初の要素&lt;/li&gt;
+    &lt;li&gt;2番目の要素&lt;/li&gt;
+    &lt;li&gt;3番目の要素&lt;/li&gt;
+    &lt;li&gt;4番目の要素&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ol>
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>3番目の要素</li>
+                        <li>4番目の要素</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>1. 最初の要素
+2. 2番目の要素
+3. 3番目の要素
+    1. インデントされた要素
+    2. インデントされた要素
+4. 4番目の要素</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A2%2E%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A3%2E%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%20%20%20%201%2E%20%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%0D%0A%20%20%20%202%2E%20%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%0D%0A4%2E%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ol&gt;
+    &lt;li&gt;最初の要素&lt;/li&gt;
+    &lt;li&gt;2番目の要素&lt;/li&gt;
+    &lt;li&gt;3番目の要素
+    &lt;ol&gt;
+        &lt;li&gt;インデントされた要素&lt;/li&gt;
+        &lt;li&gt;インデントされた要素&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;4番目の要素&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ol>
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>
+                            3番目の要素
+                            <ol>
+                                <li>インデントされた要素</li>
+                                <li>インデントされた要素</li>
+                            </ol>
+                        </li>
+                        <li>4番目の要素</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3 id="lists-unordered">順序付けられていないリスト</h3>
+
+            <p>順序付けられていないリストは、通常、要素の左側にある記号で示される要素のシーケンスです。つまり、ここには数値シーケンスはありません。</p>
+
+            <p>順序付けられていないリストを作成するためのMarkdownマークアップは、プラス記号<code class="lang-text">+</code>、ダッシュ<code class="lang-text">-</code>、またはアスタリスク<code class="lang-text">*</code>です。</p>
+
+            <p class="mv-40">
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-3427355473051563"
+                     data-ad-slot="3854885260"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </p>
+
+            <p>これらの2つの記号のいずれかをリスト項目の前に配置して境界を定め、その後に空白スペースと要素のコンテンツを配置します。</p>
+
+            <blockquote><b>注</b>：要素がマークされる前にタブを挿入して、リスト内の要素をインデントします。</blockquote>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>- 最初の要素
+- 2番目の要素
+- 3番目の要素
+- 4番目の要素</code></pre>
+	<a href="/editor/?markdown=%2D%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2D%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2D%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2D%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ul&gt;
+    &lt;li&gt;最初の要素&lt;/li&gt;
+    &lt;li&gt;2番目の要素&lt;/li&gt;
+    &lt;li&gt;3番目の要素&lt;/li&gt;
+    &lt;li&gt;4番目の要素&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ul class="browser-default">
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>3番目の要素</li>
+                        <li>4番目の要素</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>* 最初の要素
+* 2番目の要素
+* 3番目の要素
+* 4番目の要素</code></pre>
+	<a href="/editor/?markdown=%2A%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2A%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2A%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2A%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ul&gt;<br>
+    &lt;li&gt;最初の要素&lt;/li&gt;<br>
+    &lt;li&gt;2番目の要素&lt;/li&gt;<br>
+    &lt;li&gt;3番目の要素&lt;/li&gt;<br>
+    &lt;li&gt;4番目の要素&lt;/li&gt;<br>
+&lt;/ul&gt;</code></pre>
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ul class="browser-default">
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>3番目の要素</li>
+                        <li>4番目の要素</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>+ 最初の要素
+* 2番目の要素
+- 3番目の要素
++ 4番目の要素</code></pre>
+	<a href="/editor/?markdown=%2B%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2A%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2D%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2B%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ul&gt;<br>
+    &lt;li&gt;最初の要素&lt;/li&gt;<br>
+    &lt;li&gt;2番目の要素&lt;/li&gt;<br>
+    &lt;li&gt;3番目の要素&lt;/li&gt;<br>
+    &lt;li&gt;4番目の要素&lt;/li&gt;<br>
+&lt;/ul&gt;</code></pre>
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ul class="browser-default">
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>3番目の要素</li>
+                        <li>4番目の要素</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>- 最初の要素
+- 2番目の要素
+- 3番目の要素
+    - インデントされた要素
+    - インデントされた要素
+- 4番目の要素</code></pre>
+	<a href="/editor/?markdown=%2D%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2D%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%2D%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A%20%20%20%20%2D%20%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%0D%0A%20%20%20%20%2D%20%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%0D%0A%2D%204%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;ul&gt;
+    &lt;li&gt;最初の要素&lt;/li&gt;
+    &lt;li&gt;2番目の要素&lt;/li&gt;
+    &lt;li&gt;3番目の要素
+    &lt;ul&gt;
+        &lt;li&gt;インデントされた要素&lt;/li&gt;
+        &lt;li&gt;インデントされた要素&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;4番目の要素&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <ul class="browser-default">
+                        <li>最初の要素</li>
+                        <li>2番目の要素</li>
+                        <li>
+                            3番目の要素
+                            <ul class="browser-default">
+                                <li>インデんトされたた</li>
+                                <li>インデントされた要素</li>
+                            </ul>
+                        </li>
+                        <li>4番目の要素</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <h3 id="lists-adding-elements">要素の追加</h3>
+
+            <p>Markdownを使用すると、リストの連続性を損なうことなく、リストの中央に他の要素を挿入できます。</p>
+
+            <p>リストのフォーマットを保持するには、異なる要素を4つのスペースまたはタブでインデントします。</p>
+
+            <h3 id="lists-paragraph">段落</h3>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>* これはリストの最初の要素です。
+* これはリストの2番目の要素です。
+    リスト文字列を壊さずに追加された段落。
+* そして最後にリストの3番目の項目。</code></pre>
+	<a href="/editor/?markdown=%2A%20%E3%81%93%E3%82%8C%E3%81%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%99%E3%80%82%0D%0A%2A%20%E3%81%93%E3%82%8C%E3%81%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE2%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%99%E3%80%82%0D%0A%20%20%20%20%E3%83%AA%E3%82%B9%E3%83%88%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E5%A3%8A%E3%81%95%E3%81%9A%E3%81%AB%E8%BF%BD%E5%8A%A0%E3%81%95%E3%82%8C%E3%81%9F%E6%AE%B5%E8%90%BD%E3%80%82%0D%0A%2A%20%E3%81%9D%E3%81%97%E3%81%A6%E6%9C%80%E5%BE%8C%E3%81%AB%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE3%E7%95%AA%E7%9B%AE%E3%81%AE%E9%A0%85%E7%9B%AE%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果は次のようになります。</p>
+            <ul class="browser-default">
+                <li>これはリストの最初の要素です。</li>
+                <li>これはリストの2番目の要素です。</li>
+                <li>
+                    <p>リスト文字列を壊さずに追加された段落。</p>
+                </li>
+                <li>そして最後にリストの3番目の項目。</li>
+            </ul>
+
+            <h3 id="lists-blockquote">リスト内のBlockquote</h3>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>* これはリストの最初の要素です。
+* これはリストの2番目の要素です。
+
+    &gt; リストの中央にあるBlockquote。
+
+* そして最後にリストの3番目の項目。</code></pre>
+	<a href="/editor/?markdown=%2A%20%E3%81%93%E3%82%8C%E3%81%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%99%E3%80%82%0D%0A%2A%20%E3%81%93%E3%82%8C%E3%81%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE2%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%99%E3%80%82%0D%0A%0D%0A%20%20%20%20>%20%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E4%B8%AD%E5%A4%AE%E3%81%AB%E3%81%82%E3%82%8BBlockquote%E3%80%82%0D%0A%0D%0A%2A%20%E3%81%9D%E3%81%97%E3%81%A6%E6%9C%80%E5%BE%8C%E3%81%AB%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE3%E7%95%AA%E7%9B%AE%E3%81%AE%E9%A0%85%E7%9B%AE%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果は次のようになります。</p>
+
+            <ul class="browser-default">
+                <li>これはリストの最初の要素です。</li>
+                <li>
+                    <p>これはリストの2番目の要素です。</p>
+                    <blockquote>
+                        <p>リストの中央にあるBlockquote。</p>
+                    </blockquote>
+                </li>
+                <li>そして、これがリストの3番目の項目です。</li>
+            </ul>
+
+
+            <h3 id="lists-code-block">コードブロック</h3>
+
+            <p>リスト内にコードのブロックを挿入するときは、8つのスペースまたは2つのタブをインデントします。</p>
+
+            <p>以下は、コードブロックが含まれているリストの例です。</p>
+
+            <div class="language-text highlighter-rouge">
+                <div class="highlight">
+                    <div class="code-example">
+	<pre class="lang-markdown"><code>1. まず、index.htmlファイルを開きます。
+2. 以下に示すコードブロックを見つけます。
+
+        &lt;html&gt;
+            &lt;head&gt;
+            &lt;title&gt;私のウェブサイトのタイトル&lt;/title&gt;
+        &lt;/head&gt;
+
+3. ページタイトルを変更します。</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E3%81%BE%E3%81%9A%E3%80%81index%2Ehtml%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%96%8B%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%0D%0A2%2E%20%E4%BB%A5%E4%B8%8B%E3%81%AB%E7%A4%BA%E3%81%99%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%92%E8%A6%8B%E3%81%A4%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%0D%0A%0D%0A%20%20%20%20%20%20%20%20<html>%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20<head>%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20<title>%E7%A7%81%E3%81%AE%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB<%2Ftitle>%0D%0A%20%20%20%20%20%20%20%20<%2Fhead>%0D%0A%0D%0A3%2E%20%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+                </div>
+            </div>
+
+            <p>結果は次のようになります。</p>
+
+            <ol>
+                <li>まず、index.htmlファイルを開きます。</li>
+                <li>
+                    <p>以下に示すコードブロックを見つけます。</p>
+                    <pre class="lang-html"><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;私のウェブサイトのタイトル&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                </li>
+                <li>ページタイトルを変更します。</li>
+            </ol>
+
+            <p>要素間にコードブロックを挿入しても、リストの番号順は変更されていないことに注意してください。</p>
+
+            <h3 id="lists-images">画像</h3>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>1. まず、Markdownロゴファイルを開きます。
+2. 画面のMarkdownロゴを参照してください。
+
+    ![Markdownロゴ](https://markdown.net.br/assets/img/basic-syntax/markdown-logo-small.png)
+
+3. これでファイルを閉じることができます。</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E3%81%BE%E3%81%9A%E3%80%81Markdown%E3%83%AD%E3%82%B4%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%96%8B%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%0D%0A2%2E%20%E7%94%BB%E9%9D%A2%E3%81%AEMarkdown%E3%83%AD%E3%82%B4%E3%82%92%E5%8F%82%E7%85%A7%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0A%0D%0A%20%20%20%20%21[Markdown%E3%83%AD%E3%82%B4]%28https:%2F%2Fmarkdown%2Enet%2Ebr%2Fassets%2Fimg%2Fbasic%2Dsyntax%2Fmarkdown%2Dlogo%2Dsmall%2Epng%29%0D%0A%0D%0A3%2E%20%E3%81%93%E3%82%8C%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%96%89%E3%81%98%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>HTMLでのレンダリングは次のようになります。</p>
+
+            <ol>
+                <li>まず、Markdownロゴファイルを開きます。</li>
+                <li>
+                    <p>画面のMarkdownロゴを参照してください。</p>
+                    <div class="image-container">
+                        <img src="https://markdown.net.br/assets/img/basic-syntax/markdown-logo-small.png" alt="Markdownロゴ">
+                    </div>
+                </li>
+                <li>これでファイルを閉じることができます。</li>
+            </ol>
+
+
+            <h2 id="code">コード</h2>
+
+            <p>Markdownを使用すると、逆引用符<code class="lang-text">`</code>を使用してコンテンツの一部をコードとして区別できます。 Markdownプロセッサによってコードとして解釈されるテキストの前後にバッククォートを配置します。</p>
+
+            <p class="mt-60"><b>例:</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>`コード`.</code></pre>
+	<a href="/editor/?markdown=`%E3%82%B3%E3%83%BC%E3%83%89`%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;code&gt;コード.&lt;/code&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <code class="lang-text">コード</code>
+                </div>
+            </div>
+
+            <h3 id="escaping-backticks">バックボーンのエスケープ</h3>
+
+            <p>次のような状況が発生する可能性があります。</p>
+
+            <p>コードフォーマットを適用する予定のコンテンツには、すでに逆引用符が含まれています。または、バッククォートを使用してコード自体内のテキストの一部を強調表示する場合。</p>
+
+            <p>翻訳するには、引用符をMarkdownマークアップとして解釈せずに、コード境界内に引用符を配置する必要があります。</p>
+
+            <p>解決策は単純で、コードの一部を囲む最初と最後のバックを複製します。</p>
+
+            <p class="mt-60"><b>例</b></p>
+
+            <div class="code-comparison">
+                <p><i class="fab fa-markdown"></i>&nbsp;&nbsp;<b>Markdown</b></p>
+                <div class="code-example">
+	<pre class="lang-markdown"><code>``コードマークアップ内で `crase`を使用します。``</code></pre>
+	<a href="/editor/?markdown=``%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E5%86%85%E3%81%A7%20`crase`%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%BE%E3%81%99%E3%80%82``" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+                <p><i class="fab fa-html5""></i>&nbsp;&nbsp;<b>HTML</b></p>
+                <pre class="lang-html"><code>&lt;code&gt;コードマークアップ内で `crase`を使用します。&lt;/code&gt;</code></pre>
+
+                <p><i class="far fa-window-maximize"></i>&nbsp;&nbsp;<b>結果</b></p>
+                <div class="code-sample">
+                    <p>コードマークアップ内で `crase`を使用します。</p>
+                </div>
+            </div>
+
+
+            <h3 id="code-block">コードブロック</h3>
+
+            <p>Markdownを使用すると、4つのスペースまたはタブをインデントすることでコードのブロックを作成できます。</p>
+
+            <p>次の例を参照してください。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>    &lt;html&gt;
+        &lt;head&gt;
+        &lt;/head&gt;
+    &lt;/html&gt;</code></pre>
+	<a href="/editor/?markdown=%20%20%20%20<html>%0D%0A%20%20%20%20%20%20%20%20<head>%0D%0A%20%20%20%20%20%20%20%20<%2Fhead>%0D%0A%20%20%20%20<%2Fhtml>" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果：</p>
+
+            <pre class="lang-html"><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+&lt;/html&gt;</code></pre>
+
+            <p>Markdownの拡張構文を使用すると、スペースをインデントせずにコードのブロックを作成できます。このために、<a href="/extended-syntax/#code-block-cercado">囲まれたコードブロック</a>タグを使用する必要があります。</p>
+
+            <h2 id="horizontal-rule">水平線</h2>
+
+            <p>連続する3つのアスタリスク<code class="lang-text">***</code>、または3つのダッシュ<code class="lang-text">---</code>、または3つのアンダースコア<code class="lang-text">___</code>は、水平線を作成します。</p>
+
+            <p>Markdownプロセッサが水平線を正しく解釈するには、行にこれらの文字のみが含まれている必要があります。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>***
+
+---
+
+_________________</code></pre>
+	<a href="/editor/?markdown=%2A%2A%2A%0D%0A%0D%0A%2D%2D%2D%0D%0A%0D%0A_________________" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>いずれかの文字を使用すると、結果は同じになります。以下を参照してください。</p>
+
+            <hr>
+
+            <blockquote><b>注</b>：行を作成するために最大文字数を指定する必要はありません。3つ以上を使用し、行にこれらの文字しか含まれていない限り、必要な数だけ入力できます。</blockquote>
+
+
+            <h3 id="horizontal-rule-best-practices">水平線：ベストプラクティス</h3>
+
+            <p>水平線マークの前後には必ず空白行を追加してください。これは、タイトルを作成するための代替構文のために必要です。コンテンツのある行のすぐ下に3つのダッシュ<code class="lang-text">---</code>を置くと、これはレベル2のタイトルとして解釈されます。</p>
+
+            <p><a href="#table-1-18">表1.18</a>は、正しい方法での水平線の作成を例示しています。</p>
+
+            <table class="responsive-table" id="table-1-18">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            水平線を作成する前に、必ず空白行を配置してください。<br><br>
+                            ---<br><br>
+                            水平線を作成した後、空白行を追加します。
+                        </td>
+                        <td>
+                            横線の前に空白行を入れないと、このコンテンツはレベル2のタイトルとして解釈されます。<br>
+                            ---<br>
+                            水平線の後の空白行はどこにありますか？
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.18-Markdownで水平線を作成する正しい方法。</small>
+
+
+
+            <h2 id="links">Links</h2>
+
+            <p>Linksは、ドキュメントの各部分の間にリンクを作成するために使用されます。 WebまたはPDFファイルのページを作成する場合、linksを挿入できることは、これらのタイプのドキュメントを編集するために不可欠な機能の1つです。</p>
+
+            <p>Markdownでlinksを作成するための基本的な構文は次のとおりです。</p>
+
+            <ul class="collection">
+                <li class="collection-item green lighten-5">linkを表すテキストを角かっこで囲みます。例：<br><code class="lang-text">[世界最高のMarkdownサイト]</code>.</li>
+                <li class="collection-item yellow lighten-5">次に、URLとも呼ばれるlinkのアドレスを括弧で囲む必要があります。例：<br><code class="lang-text">(https://ja.markdown.net.br)</code></li>
+            </ul>
+
+            <p>すべてを一緒に入れて。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>訪問 [世界最高のMarkdownサイト](https://ja.markdown.net.br).</code></pre>
+	<a href="/editor/?markdown=%E8%A8%AA%E5%95%8F%20[%E4%B8%96%E7%95%8C%E6%9C%80%E9%AB%98%E3%81%AEMarkdown%E3%82%B5%E3%82%A4%E3%83%88]%28https:%2F%2Fja%2Emarkdown%2Enet%2Ebr%29%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>そして、HTMLの出力。</p>
+
+            <p><a href="https://ja.markdown.net.br" target="_blank">世界最高のMarkdownサイト</a>にアクセスしてください</p>
+
+            <h3 id="links-adding-titles">タイトルの追加</h3>
+
+            <p>HTMLの使用経験が少ない場合は、ユーザーがmouseをページのlinkに配置すると、通常、linkの目的を説明する小さなラベルがユーザーに表示されることをご存知でしょう。</p>
+
+            <p>このラベルはlinkのタイトルであり、Markdownを使用して作成するには、URLの後に引用符で囲んだテキストを括弧内に追加するだけです。</p>
+
+            <p>例:</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>訪問 [世界最高のMarkdownサイト](https://ja.markdown.net.br "Markdownの最も信頼のおけるリファレンス。").</code></pre>
+	<a href="/editor/?markdown=%E8%A8%AA%E5%95%8F%20[%E4%B8%96%E7%95%8C%E6%9C%80%E9%AB%98%E3%81%AEMarkdown%E3%82%B5%E3%82%A4%E3%83%88]%28https:%2F%2Fja%2Emarkdown%2Enet%2Ebr%20%22Markdown%E3%81%AE%E6%9C%80%E3%82%82%E4%BF%A1%E9%A0%BC%E3%81%AE%E3%81%8A%E3%81%91%E3%82%8B%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%80%82%22%29%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>HTMLで終了し、mouseをlinkに配置して、タイトルが表示されるのを確認します。</p>
+
+            <p>訪問 <a href="https://ja.markdown.net.br" title="Markdownの最も信頼のおけるリファレンス。" target="_blank">世界最高のMarkdownサイト</a></p>
+
+
+            <h3 id="urls-email">URLsおよびemailアドレス</h3>
+
+            <p>また、URLを<code class="lang-plaintext">&lt;</code>未満と<code class="lang-plaintext">&gt;</code>より大きい間に配置することにより、URLを自動的にリンクに変換することもできます。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>&lt;https://ja.markdown.net.br&gt;
+&lt;email@host.com&gt;</code></pre>
+	<a href="/editor/?markdown=<https:%2F%2Fja%2Emarkdown%2Enet%2Ebr>%0D%0A<email@host%2Ecom>" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果は次のようになります。</p>
+
+            <p><a href="https://markdown.net.br/" target="_blank">https://ja.markdown.net.br</a><br>
+                <a href="mailto:email@exemplo.com.br">email@host.com</a>
+            </p>
+
+            <h3 id="links-emphasis">linksを強調する</h3>
+
+            <p>link形式の前後、つまり括弧の前と括弧の後にアスタリスクを追加することにより、そのlinkを強調する必要があることをMarkdownプロセッサーに示します。</p>
+
+            <p>例えば：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>サイトを訪れる: *[Markdownリファレンス](https://ja.markdown.net.br)*.
+検索エンジンをお勧めします: **[Duck Duck GO](https://duckduckgo.com/)**.</code></pre>
+	<a href="/editor/?markdown=%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E8%A8%AA%E3%82%8C%E3%82%8B:%20%2A[Markdown%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9]%28https:%2F%2Fja%2Emarkdown%2Enet%2Ebr%29%2A%2E%0D%0A%E6%A4%9C%E7%B4%A2%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%92%E3%81%8A%E5%8B%A7%E3%82%81%E3%81%97%E3%81%BE%E3%81%99:%20%2A%2A[Duck%20Duck%20GO]%28https:%2F%2Fduckduckgo%2Ecom%2F%29%2A%2A%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>HTMLの出力は次のようになります。</p>
+
+            <p>サイトを訪れる: <a href="https://ja.markdown.net.br" target="_blank">Markdownリファレンス</a>
+                <br>
+                私は検索エンジンをお勧めします： <a href="https://duckduckgo.com/" target="_blank">Duck Duck GO</a>.
+            </p>
+
+            <p>コードフォーマットを使用して、linkを強調表示することもできます。</p>
+
+            <p>例:</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>セクションを確認する: [`コード`](#code).</code></pre>
+	<a href="/editor/?markdown=%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B:%20[`%E3%82%B3%E3%83%BC%E3%83%89`]%28%23code%29%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果：</p>
+
+            <p>セクションを確認します。 <a href="#code"><code class="lang-markdown">コード</code></a></p>
+
+            <h3 id="links-reference">参照スタイルLinks</h3>
+
+            <p>Markdownは、linksを作成するための代替構文を提供し、ドキュメントをよりきれいに表示できるようにします。</p>
+
+            <p>この構文を使用すると、1つの参照だけで段落の中央にlinkに変換されるテキストを配置できます。ドキュメントの最後に、以前と同じ参照を使用してすべてのlinksを追加します。</p>
+
+            <blockquote><b>注</b>：link参照はドキュメントのどこにでも配置できます。組織上の理由から、最後に配置することをお勧めします。</blockquote>
+
+            <p>この参照linkの作成は2つの部分に分かれているため、それぞれを分析します。</p>
+
+            <h3 id="links-formatting-first-part">linkの最初の部分</h3>
+
+            <p>最初に2セットの角かっこを作成します。最初にlinkのテキスト、つまりページに表示されるテキスト、2番目にlinkのアドレスの参照として機能するラベルを作成します。</p>
+
+            <pre class="lang-markdown"><code>[Markdown - Wikipedia][1]</code></pre>
+
+            <blockquote><b>注</b>：角括弧の2番目のペア内にある参照linkラベルは、任意、数字、単語、フレーズにすることができ、句読点を含めることもできます。linkへの参照がドキュメントの終わりは同じです。</blockquote>
+
+            <p>例：</p>
+
+            <pre class="lang-markdown"><code>[Markdown - Wikipedia][wiki_markdown.1]
+[ジョン・グルーバーの公式ウェブサイト][JOHN GRUBER]</code></pre>
+
+            <blockquote><b>注</b>：参照ラベルでも大文字と小文字は区別されません。つまり、wiki_markdownはWIKI_MARKDOWNと同じです。</blockquote>
+
+
+            <h3 id="links-formatting-second-part">linkの2番目の部分</h3>
+
+            <p>2番目の部分は、そのlinkが指す場所、つまりlinkのURLを示します。</p>
+
+            <p>linkの2番目の部分を組み立てるには、次のものが必要です。</p>
+
+            <ol>
+                <li>ドキュメントの前半で作成した有効なlink参照ラベルを角かっこで囲み、その後にコロンと少なくとも1つの空白スペースを続けます（たとえば、<code class="lang-markdown">[label]：</code>）。</li>
+                <li>リンクアドレス。オプションで、このURLは<code class="lang-plaintext">&lt;</code>未満から<code class="lang-plaintext">&gt;</code>を超えることができます。</li>
+                <li>引用符<code class="lang-plaintext">""</code>、単一引用符<code class="lang-plaintext">''</code>、または<code class="lang-plaintext">()</code>括弧の間のリンクタイトルは、もちろんオプションです。</li>
+            </ol>
+
+            <p>以下のすべての例は、2番目の部分のフォーマットに有効です。</p>
+
+            <pre class="lang-markdown"><code>[1]: https://en.wikipedia.org/wiki/Markdown
+[1]: https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia"
+[1]: https://en.wikipedia.org/wiki/Markdown 'Markdown - Wikipedia'
+[1]: https://en.wikipedia.org/wiki/Markdown (Markdown - Wikipedia)
+[1]: &lt;https://en.wikipedia.org/wiki/Markdown&gt; "Markdown - Wikipedia"
+[1]: &lt;https://en.wikipedia.org/wiki/Markdown&gt; 'Markdown - Wikipedia'
+[1]: &lt;https://en.wikipedia.org/wiki/Markdown&gt; (Markdown - Wikipedia)</code></pre>
+
+
+            <p>linkのこの2番目の部分は、ドキュメントのどこにでも配置できることを再度強調します。組織上の理由から、ファイルの最後に追加します。</p>
+
+
+            <h3 id="links-all-together">すべてのピースをまとめる</h3>
+
+            <p>ここでは、links参照を使用すると、ドキュメントMarkdownを読みやすくすることができる状況を紹介します。</p>
+
+            <p>その段落でカバーされているコンテンツに関する詳細情報を含む1つ以上のlinksをWebサイトに追加する必要があるとします。</p>
+
+            <p>Markdownでは、次のようになります。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>詳細については、Markdownからこの記事を参照してください。 [Wikipedia](https://en.wikipedia.org/wiki/Markdown "Markdown - Wikipedia"). または言語ドキュメンテーション： [John Gruber](https://daringfireball.net/projects/markdown/ "オリジナルのMarkdownドキュメント。").</code></pre>
+	<a href="/editor/?markdown=%E8%A9%B3%E7%B4%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AF%E3%80%81Markdown%E3%81%8B%E3%82%89%E3%81%93%E3%81%AE%E8%A8%98%E4%BA%8B%E3%82%92%E5%8F%82%E7%85%A7%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%20[Wikipedia]%28https:%2F%2Fen%2Ewikipedia%2Eorg%2Fwiki%2FMarkdown%20%22Markdown%20%2D%20Wikipedia%22%29%2E%20%E3%81%BE%E3%81%9F%E3%81%AF%E8%A8%80%E8%AA%9E%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%EF%BC%9A%20[John%20Gruber]%28https:%2F%2Fdaringfireball%2Enet%2Fprojects%2Fmarkdown%2F%20%22%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%81%AEMarkdown%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%80%82%22%29%2E" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>段落自体にlinksを追加すると、特にテキストを読んでいる人がMarkdownを知らない場合に、テキストが読みにくくなる可能性があることに注意してください。</p>
+
+            <p>linksは段落のコンテキストにとって重要であるため、それらを削除することはできませんが、linksを参照として使用して、その段落をクリーンアップするより効果的な方法があります。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>詳細については、Markdownからこの記事を参照してください。 [Wikipedia][1]. または言語ドキュメンテーション： [John Gruber][2].
+
+[1]: &lt;https://en.wikipedia.org/wiki/Markdown&gt; "Markdown - Wikipedia"
+[2]: https://daringfireball.net/projects/markdown/ "オリジナルのMarkdownドキュメント。"</code></pre>
+	<a href="/editor/?markdown=%E8%A9%B3%E7%B4%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AF%E3%80%81Markdown%E3%81%8B%E3%82%89%E3%81%93%E3%81%AE%E8%A8%98%E4%BA%8B%E3%82%92%E5%8F%82%E7%85%A7%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%20[Wikipedia][1]%2E%20%E3%81%BE%E3%81%9F%E3%81%AF%E8%A8%80%E8%AA%9E%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%EF%BC%9A%20[John%20Gruber][2]%2E%0D%0A%0D%0A[1]:%20<https:%2F%2Fen%2Ewikipedia%2Eorg%2Fwiki%2FMarkdown>%20%22Markdown%20%2D%20Wikipedia%22%0D%0A[2]:%20https:%2F%2Fdaringfireball%2Enet%2Fprojects%2Fmarkdown%2F%20%22%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%81%AEMarkdown%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%80%82%22" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <blockquote><b>注</b>：リンクの周囲に<code class="lang-plaintext">&lt;</code>より小さく<code class="lang-plaintext">&gt;</code>より大きく配置することはオプションです。</blockquote>
+
+            <p>上記の2つの形式は、HTMLで同じ結果になります。</p>
+
+            <p>詳細については、Markdownからこの記事を参照してください。 <a href="https://en.wikipedia.org/wiki/Markdown" title="Markdown - Wikipedia" target="_blank">Wikipedia</a>. または言語ドキュメンテーション： <a href="https://daringfireball.net/projects/markdown/" title="オリジナルのMarkdownドキュメント。" target="_blank">John Gruber</a>.</p>
+
+            <h3 id="links-best-practices">参照Links：ベストプラクティス</h3>
+
+            <p>場合によっては、URLsで空白が発生することがあります。これは、アプリケーションMarkdownによっては問題になる可能性があります。</p>
+
+            <p>フォーマットの異常を回避するには、エンコードされた空白を使用します。 <code class="lang-text">%20</code>.</p>
+
+            <p><a href="#table-1-19">表1.19</a>は、エンコーディングを使用したURLの空白のフォーマットを示しています。</p>
+
+            <table class="responsive-table" id="table-1-19">
+                <thead>
+                    <tr>
+                        <th class="green-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;正しい</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-up"></i></span>
+                        </th>
+                        <th class="red-text">
+                            <span class="hide-on-small-only"><i class="fas fa-thumbs-down"></i>&nbsp;&nbsp;推奨されません</span>
+                            <span class="hide-on-med-and-up"><i class="fas fa-thumbs-down"></i></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            [link](https://exemplo.com/my%20page)
+                        </td>
+                        <td>
+                            [link](https://exemplo.com/my page)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.19-URLsでコード化された空白の使用。</small>
+
+
+            <h2 id="images">画像</h2>
+
+            <p>イメージを追加するためのMarkdownの構文は次のとおりです。</p>
+
+            <ol>
+                <li>感嘆符: <code class="lang-text">!</code>.</li>
+                <li>角括弧内の画像の代替テキスト: <code class="lang-plaintext">[]</code></li>
+                <li>括弧内の画像の完全なアドレス: <code class="lang-plaintext">()</code></li>
+                <li>引用符で囲まれたオプションのタイトル、まだ括弧内: <code class="lang-plaintext">( "")</code></li>
+            </ol>
+
+            <p>例：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>![Markdownは、世界で最も単純なマークアップ言語です。](https://markdown.net.br/assets/img/markdown.jpg "Markdownロゴ")</code></pre>
+	<a href="/editor/?markdown=%21[Markdown%E3%81%AF%E3%80%81%E4%B8%96%E7%95%8C%E3%81%A7%E6%9C%80%E3%82%82%E5%8D%98%E7%B4%94%E3%81%AA%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E8%A8%80%E8%AA%9E%E3%81%A7%E3%81%99%E3%80%82]%28https:%2F%2Fmarkdown%2Enet%2Ebr%2Fassets%2Fimg%2Fmarkdown%2Ejpg%20%22Markdown%E3%83%AD%E3%82%B4%22%29" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>HTMLへの変換は次のようになります。</p>
+
+            <div class="image-container">
+                <img src="https://markdown.net.br/assets/img/markdown.jpg" class="materialboxed" alt="Markdownは、世界で最も単純なマークアップ言語です。" title="Markdownロゴ">
+            </div>
+
+
+            <h3 id="images-link">画像とLink</h3>
+
+            <p>linkのような画像を使用するには：</p>
+
+            <ol>
+                <li>通常のlink形式を作成します。</li>
+                <li>テキストを参照するlinkのフォーマットの最初の括弧のペアでは、上記で学習したMarkdown画像フォーマットを使用します。</li>
+            </ol>
+
+            <p>例：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>[![砂漠の古代の石](https://markdown.net.br/assets/img/shiprock.jpg "Shiprock, New Mexico By Beau Rogers")](https://www.flickr.com/photos/beaurogers/31833779864/in/photolist-Qv3rFw-34mt9F-a9Cmfy-5Ha3Zi-9msKdv-o3hgjr-hWpUte-4WMsJ1-KUQ8N-deshUb-vssBD-6CQci6-8AFCiD-zsJWT-nNfsgB-dPDwZJ-bn9JGn-5HtSXY-6CUhAL-a4UTXB-ugPum-KUPSo-fBLNm-6CUmpy-4WMsc9-8a7D3T-83KJev-6CQ2bK-nNusHJ-a78rQH-nw3NvT-7aq2qf-8wwBso-3nNceh-ugSKP-4mh4kh-bbeeqH-a7biME-q3PtTf-brFpgb-cg38zw-bXMZc-nJPELD-f58Lmo-bXMYG-bz8AAi-bxNtNT-bXMYi-bXMY6-bXMYv)</code></pre>
+	<a href="/editor/?markdown=[%21[%E7%A0%82%E6%BC%A0%E3%81%AE%E5%8F%A4%E4%BB%A3%E3%81%AE%E7%9F%B3]%28https:%2F%2Fmarkdown%2Enet%2Ebr%2Fassets%2Fimg%2Fshiprock%2Ejpg%20%22Shiprock%2C%20New%20Mexico%20By%20Beau%20Rogers%22%29]%28https:%2F%2Fwww%2Eflickr%2Ecom%2Fphotos%2Fbeaurogers%2F31833779864%2Fin%2Fphotolist%2DQv3rFw%2D34mt9F%2Da9Cmfy%2D5Ha3Zi%2D9msKdv%2Do3hgjr%2DhWpUte%2D4WMsJ1%2DKUQ8N%2DdeshUb%2DvssBD%2D6CQci6%2D8AFCiD%2DzsJWT%2DnNfsgB%2DdPDwZJ%2Dbn9JGn%2D5HtSXY%2D6CUhAL%2Da4UTXB%2DugPum%2DKUPSo%2DfBLNm%2D6CUmpy%2D4WMsc9%2D8a7D3T%2D83KJev%2D6CQ2bK%2DnNusHJ%2Da78rQH%2Dnw3NvT%2D7aq2qf%2D8wwBso%2D3nNceh%2DugSKP%2D4mh4kh%2DbbeeqH%2Da7biME%2Dq3PtTf%2DbrFpgb%2Dcg38zw%2DbXMZc%2DnJPELD%2Df58Lmo%2DbXMYG%2Dbz8AAi%2DbxNtNT%2DbXMYi%2DbXMY6%2DbXMYv%29" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果：</p>
+
+            <div class="image-container">
+                <a href="https://www.flickr.com/photos/beaurogers/31833779864/in/photolist-Qv3rFw-34mt9F-a9Cmfy-5Ha3Zi-9msKdv-o3hgjr-hWpUte-4WMsJ1-KUQ8N-deshUb-vssBD-6CQci6-8AFCiD-zsJWT-nNfsgB-dPDwZJ-bn9JGn-5HtSXY-6CUhAL-a4UTXB-ugPum-KUPSo-fBLNm-6CUmpy-4WMsc9-8a7D3T-83KJev-6CQ2bK-nNusHJ-a78rQH-nw3NvT-7aq2qf-8wwBso-3nNceh-ugSKP-4mh4kh-bbeeqH-a7biME-q3PtTf-brFpgb-cg38zw-bXMZc-nJPELD-f58Lmo-bXMYG-bz8AAi-bxNtNT-bXMYi-bXMY6-bXMYv" target="_blank"><img src="https://markdown.net.br/assets/img/shiprock.jpg" alt="砂漠の古代の石" title="Shiprock, New Mexico By Beau Rogers"></a>
+            </div>
+
+
+            <h2 id="escaping-characteres">エスケープ文字</h2>
+
+            <p>マークダウン内の文字をエスケープするには、つまり、ドキュメント内で文字通り表現するには、その前に円記号を挿入します。</p>
+
+            <p>例：</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>\* アスタリスクの前の円記号により、Markdownプロセッサは、その行をリストの要素ではなく段落として解釈します。</code></pre>
+	<a href="/editor/?markdown=\%2A%20%E3%82%A2%E3%82%B9%E3%82%BF%E3%83%AA%E3%82%B9%E3%82%AF%E3%81%AE%E5%89%8D%E3%81%AE%E5%86%86%E8%A8%98%E5%8F%B7%E3%81%AB%E3%82%88%E3%82%8A%E3%80%81Markdown%E3%83%97%E3%83%AD%E3%82%BB%E3%83%83%E3%82%B5%E3%81%AF%E3%80%81%E3%81%9D%E3%81%AE%E8%A1%8C%E3%82%92%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%8F%E6%AE%B5%E8%90%BD%E3%81%A8%E3%81%97%E3%81%A6%E8%A7%A3%E9%87%88%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果は次のようになります。</p>
+
+            <p>*アスタリスクの前の円記号により、Markdownプロセッサは、この行をリストの要素ではなく段落として解釈します。</p>
+
+            <h3 id="characteres-table">逃げられるキャラクター</h3>
+
+            <p><a href="#table-1-20">表1.20</a>は、バックスラッシュを使用してMarkdownでエスケープできる文字を示しています: <code class="lang-text">\</code>.</p>
+
+            <table class="striped responsive-table" id="table-1-20">
+                <thead>
+                    <tr>
+                        <th>キャラクター</th>
+                        <th>名前</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>\</td>
+                        <td>バックスラッシュ</td>
+                    </tr>
+                    <tr>
+                        <td>`</td>
+                        <td>逆引用符（<a href="#escaping-backticks">コードブロック内の逆引用符のエスケープ</a>も参照）</td>
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td>アスタリスク</td>
+                    </tr>
+                    <tr>
+                        <td>_</td>
+                        <td>下線付き</td>
+                    </tr>
+                    <tr>
+                        <td>{ }</td>
+                        <td>キー</td>
+                    </tr>
+                    <tr>
+                        <td>[ ]</td>
+                        <td>角括弧</td>
+                    </tr>
+                    <tr>
+                        <td>( )</td>
+                        <td>括弧</td>
+                    </tr>
+                    <tr>
+                        <td>#</td>
+                        <td>ハッシュ</td>
+                    </tr>
+                    <tr>
+                        <td>+</td>
+                        <td>プラス</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>マイナス記号</td>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                        <td>スコア</td>
+                    </tr>
+                    <tr>
+                        <td>!</td>
+                        <td>エクスクラメーション・マーク</td>
+                    </tr>
+                    <tr>
+                        <td>|</td>
+                        <td>垂直バー（<a href="/extended-syntax/#escaping-vertical-bars">テーブル内の垂直バーのエスケープ</a>も参照）</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <small class="caption">表1.20-バックスラッシュを使用してMarkdownでエスケープできる文字。</small>
+
+            <h2 id="html">HTMLおよびMarkdown</h2>
+
+            <p>すでにHTMLの経験があるプログラマーは、同じドキュメント内で2つの構文、つまりHTMLとMarkdownを混在させることがあります。</p>
+
+            <p>HTMLは、色、場所、サイズなど、ドキュメント内の要素の属性を変更するなどのタスクで役立ちます。</p>
+
+            <p>HTMLタグをドキュメントに直接配置します。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>**大胆な** &lt;em&gt;イタリック&lt;/em&gt;</code></pre>
+	<a href="/editor/?markdown=%2A%2A%E5%A4%A7%E8%83%86%E3%81%AA%2A%2A%20<em>%E3%82%A4%E3%82%BF%E3%83%AA%E3%83%83%E3%82%AF<%2Fem>" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+
+            <p>結果は次のようになります。</p>
+
+            <p><b>大胆な</b> <em>itálico</em></p>
+
+            <h3 id="html-best-practices">HTMLおよびMarkdown：ベストプラクティス</h3>
+
+            <p>すべてのMarkdownプロセッサがHTMLタグと互換性があるわけではなく、場合によっては、これらのタグのサブセットのみをサポートすることに注意することが重要です。</p>
+
+            <p>試行錯誤が戦略になる可能性があります。 tagsを使用してコンテンツをフォーマットし、HTMLの出力が期待どおりであるかどうかを確認するか、もちろん、アプリケーションのドキュメントを参照してください。</p>
+
+            <p>HTMLのtags行をインデントしないでください。ブランクもタブもインデントしないでください。変換時に要素のフォーマットが妨げられる可能性があります。</p>
+
+            <p>ブロック要素の前後に空白行を挿入します。例: <code class="lang-html">&lt;div&gt;</code>, <code class="lang-html">&lt;table&gt;</code>, <code class="lang-html">&lt;pre&gt;</code>, <code class="lang-html">&lt;p&gt;</code>.</p>
+
+            <p>HTMLタグのコンテンツ内にMarkdown要素を配置することは避けてください。</p>
+
+            <p>以下のコードは、一部のエディターで機能しますが、フォーマットの問題を引き起こす可能性のある構文が混在しています。</p>
+
+            <div class="code-example">
+	<pre class="lang-markdown"><code>&lt;p&gt;イタリック **大胆な**&lt;/p&gt;</code></pre>
+	<a href="/editor/?markdown=<p>%E3%82%A4%E3%82%BF%E3%83%AA%E3%83%83%E3%82%AF%20%2A%2A%E5%A4%A7%E8%83%86%E3%81%AA%2A%2A<%2Fp>" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+        </div>
+    </div>
+            <div class="col-12">
+  <ul class="collapsible">
+    <li class="active">
+      <div class="collapsible-header grey lighten-4"><i class="material-icons">share</i>共有</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a href="#!" class="collection-item" data-sharer="twitter" data-title="Markdown®基本：構文、使用法、例[ステップバイステップ]" data-hashtags="markdown" data-url="https://ja.markdown.net.br/basic-syntax/">
+            <i class="fab fa-twitter color-twitter"></i>&nbsp;&nbsp;Twitterで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="facebook" data-hashtag="markdown" data-url="https://ja.markdown.net.br/basic-syntax/">
+            <i class="fab fa-facebook color-facebook"></i>&nbsp;&nbsp;Facebookでシェア
+          </a>
+          <a href="#!" class="collection-item" data-sharer="linkedin" data-url="https://ja.markdown.net.br/basic-syntax/">
+            <i class="fab fa-linkedin color-linkedin"></i>&nbsp;&nbsp;Linkedinで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="email" data-title="Markdown®基本：構文、使用法、例[ステップバイステップ]" data-url="https://ja.markdown.net.br/basic-syntax/" data-subject="こんにちは！はい？このマークダウンガイドは非常にわかりやすいと思いました。できる限り見てください。それがもっと役立つことを願っています。" data-to="email@host.com">
+            <i class="fas fa-envelope color-email"></i>&nbsp;&nbsp;メールで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="whatsapp" data-title="Markdown®基本：構文、使用法、例[ステップバイステップ]" data-url="https://ja.markdown.net.br/basic-syntax/">
+            <i class="fab fa-whatsapp color-whatsapp"></i>&nbsp;&nbsp;Whatsappで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="telegram" data-title="Markdown®基本：構文、使用法、例[ステップバイステップ]" data-url="https://ja.markdown.net.br/basic-syntax/" data-to="(00) 99999-9999">
+            <i class="fab fa-telegram color-telegram"></i>&nbsp;&nbsp;電報で共有
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+          </div>
+          <!-- Table of contents -->
+          <div class="col hide-on-small-only m3 xl3 offset-xl1">
+            <div class="toc-wrapper" id="sticky-navigator">
+            </div>
+          </div>
+          <!-- Table of contents -->
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer docs-footer">
+  <div class="container">
+    <div class="row" style="margin-bottom: 0;">
+      <div class="col s12 m10 offset-m1">
+        <div class="row">
+          <div class="col l4 s12" style="overflow: hidden;">
+            <a href="https://twitter.com/CodigoNetwork" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">@CodigoNetworkをフォローする</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div>
+            &copy;&nbsp;<noscript>2020</noscript><script type="text/javascript">document.write(new Date().getFullYear());</script> <strong>Markdown</strong>, 全著作権所有.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--  Scripts-->
+    <script src="/assets/js/bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.js" integrity="sha256-1baFoczEXwdtWBiZ6gbu7W1kn6XfPgKY4LkQQYNHTkM=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-asciidoc.min.js" integrity="sha256-Z6qgXS53J00CrN9qHl3CxGqX2A3qs6HwGi96bnk2e4w=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-markdown.min.js" integrity="sha256-LVbOCHxYsNr9pF5KGdB2NphtO2FKM92SGFxRkWc9Ovg=" crossorigin="anonymous"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.youtube.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.picture.min.js"></script>
+    <!-- Lightbox das imagens -->
+    <script>
+      $(document).ready(function(){
+         $('.materialboxed').materialbox();
+
+         $('picture.lazy-img.unloaded, img.lazy-img, iframe.lazy-yt.unloaded').Lazy({
+             effect: 'fadeIn',
+             effectTime: 1000
+             // called after an element was successfully handled
+             // afterLoad: function(element) {
+             // // Remove a animação do loader da imagem
+             //     // element.height(element.closest('.img-lazy-container').find('.image-placeholder').height());
+
+             //     element.removeClass('unloaded');
+             // }
+         });
+       });
+      anchors.add("h2, h3, h5");
+      $('#sticky-navigator').stickyNavigator();
+    </script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+</html>

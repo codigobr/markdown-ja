@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69958365-6"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-69958365-6');
+    </script>
+    <!-- Auto ads - Google -->
+    <script data-ad-client="ca-pub-3427355473051563" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="canonical" href="https://ja.markdown.net.br/tools/markdown-here/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="author" content="Robert Salles">
+    <meta name="description" content="世界で最も単純なマークアップ言語の使用方法のいくつかの例を含む、初心者向けの完全な無料のMarkdownガイド。">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ja.markdown.net.br/tools/markdown-here/">
+    <meta property="og:title" content="Markdown Here®--Markdown™Cheatsheet [完全なフォーマット表]">
+    <meta property="og:description" content="世界で最も単純なマークアップ言語の使用方法のいくつかの例を含む、初心者向けの完全な無料のMarkdownガイド。">
+    <meta property="og:image" content="https://markdown.net.br/assets/img/markdown.jpg">
+
+    <title>Markdown Here®--Markdown™Cheatsheet [完全なフォーマット表]</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2196f3">
+    <meta name="msapplication-TileColor" content="#2196f3">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#2196f3">
+    <!-- CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.css" integrity="sha256-nOfkEPu/TzBvIxN8D/vW8weOUczzDbxRjgik/hA2hBI=" crossorigin="anonymous" />
+    <style type="text/css">
+    	.mv-40 {
+    		margin-top: 40px;
+    		margin-bottom: 40px;
+    	}
+
+    	img[src=""],
+    	img:not([src]) {
+    	  visibility: hidden;
+    	}
+
+    	.caption {
+    	    display: flex;
+    	    justify-content: center;
+    	    align-items: center;
+    	    margin: 10px 0;
+    	    color: hsl(0deg 0% 33%);
+    	    font-style: italic;
+    	    font-size: 75%;
+    	}
+
+    	picture {
+    		display: block;
+    		position: relative;
+    	}
+
+    	.cover-link {
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    	}
+    </style>
+  </head>
+  <body class="themes" cz-shortcut-listen="true">
+    <header>
+      <div class="container">
+  <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger waves-effect waves-light circle">
+  <i class="material-icons">menu</i>
+  </a>
+</div>
+<ul id="nav-mobile" class="sidenav">
+  <li class="logo blue">
+    <a id="logo-container" href="/" class="brand-logo">
+    <img src="https://markdown.net.br/assets/img/markdown-logo-transparent.svg" height="100">
+    </a>
+  </li>
+  <li class="push-it-down"></li>
+  <li class="search white">
+    <div class="search-wrapper">
+      <input id="search" placeholder="Buscar"><i class="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li>
+  <li class="bold white">
+    <a href="/intro/" class="waves-effect waves-blue"><i class="tiny material-icons">child_care</i>前書き</a>
+  </li>
+  <li class="bold white">
+    <a href="/basic-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">short_text</i>基本構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/extended-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">format_align_left</i>拡張構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/cheatsheet/" class="waves-effect waves-blue"><i class="tiny material-icons">help_outline</i>クイックリファレンス</a>
+  </li>
+  <li class="bold white">
+    <a href="/tools/" class="waves-effect waves-blue"><i class="tiny material-icons">card_travel</i>ツール</a>
+  </li>
+</ul>
+    </header>
+    <main>
+      <div class="section" id="index-banner">
+        <div class="container">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m6 l7 offset-m1 offset-l1">
+              <h1>Markdown Here</h1>
+              <h4 class="light">Markdown Hereは、Browserの拡張機能であり、サイトのフォームフィールド内に入力されたMarkdownコンテンツをRich Text形式に変換できます。</h4>
+              <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" href="https://markdown.net.br/">
+                      <span itemprop="name">Markdown</span></a>
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li>
+<i class="fas fa-chevron-right chevron-separator"></i>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="/tools/">
+<span itemprop="name">Markdownエディター</span>
+</a>
+<meta itemprop="position" content="2" />
+</li>
+<li>
+<i class="fas fa-chevron-right chevron-separator"></i>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<span itemprop="name">Markdown Here</span>
+<meta itemprop="position" content="3" />
+</li>
+
+              </ol>
+            </div>
+            <div class="col s12 m5 l4 mt-s-30" align="center">
+            	<!-- square-fixed-300-250 -->
+            	<ins class="adsbygoogle"
+            	     style="display:inline-block;width:300px;height:250px"
+            	     data-ad-client="ca-pub-3427355473051563"
+            	     data-ad-slot="1035906960"></ins>
+            	<script>
+            	     (adsbygoogle = window.adsbygoogle || []).push({});
+            	</script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!--  Outer row  -->
+        <div class="row">
+          <div class="section col s12 m8 offset-m1 xl7 offset-xl1">
+            <div class="row scrollspy">
+  <div class="col s12">
+    <h2 id="intro">概要概要</h2>
+
+    <p>Markdown Here拡張機能は、ユーザーがどこに行ってもMarkdownを使用するオプションを提供します。</p>
+
+    <p>少なくとも、このツールは非常に野心的であると言えます。なぜなら、そこにあるさまざまなサイトの数は天文学的なものであり、アプリケーションはすべて冒険的だからです。</p>
+
+    <p class="mv-40">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-3427355473051563"
+             data-ad-slot="3854885260"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </p>
+
+    <p>全部で？つまり、Rich Text形式をサポートしているサイトは、そうです。太字、斜体、下線など、そのようなMicrosoft Word形式です。</p>
+
+    <p>Gmail、Hotmail、WordPressなどのサイトは、Markdown Hereを使用できる場所の例です。</p>
+
+    <p>しかし、それだけではありません。Markdown Hereは、EvernoteのWebバージョンでも機能します。</p>
+
+    <p><a href="https://github.com/adam-p/markdown-here/wiki/Compatibility" target="_blank">ここをクリック</a>すると、ツールと互換性のあるサービスのリストを参照できます。</p>
+
+    <p>Markdown Hereを使用するには、まずブラウザの拡張機能をインストールし、GmailなどのWebサイトにアクセスし、Markdown形式を使用してemailのコンテンツを入力し、メッセージフォーム内のmouseの反対側のボタン（右ボタン）をクリックして、[a1]をクリックします。 Markdown Toggle"。</p>
+
+    <p>下の画像を参照してください。</p>
+
+    <div class="image-container mt-60">
+      <img src="https://markdown.net.br/assets/img/markdown-here-exemplo.png" class="materialboxed" alt="Rich TextをMarkdownに変換するMarkdown Here" title="Rich TextをMarkdownに変換するMarkdown Here">
+    </div>
+
+    <p>そこで、Markdown Hereは、サイト自体の中でMarkdownコンテンツをRich Textに変換する仕事をします。</p>
+
+    <p>もちろん、さまざまなフォーマットを提供するサイトの数が非常に多いため、レンダリングされたコンテンツに不整合がある可能性があります。</p>
+
+    <p class="mv-40">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-3427355473051563"
+             data-ad-slot="3854885260"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </p>
+
+    <p>メッセージのフォーマットを常に確認し、誰かに送信する前に、メッセージが希望どおりであることを確認してください。</p>
+
+    <p>Markdown Hereの公式ウェブサイトは<a href="https://markdown-here.com/" target="_blank">https://markdown-here.com/</a>にあります。</p>
+
+    <h2 id="markdown-support">Markdown HereでのMarkdownのサポート</h2>
+
+    <p><a href="#table-1-1">表1.1</a>では、Markdown Hereと互換性のあるMarkdown要素を確認できます。</p>
+
+    <table class="responsive-table" id="table-1-1">
+      <thead>
+        <tr>
+          <th>素子</th>
+          <th>サポート</th>
+          <th>情報</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/basic-syntax/#headings" target="_blank">タイトル</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#paragraphs" target="_blank">段落</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#line-break" target="_blank">改行</a></td>
+          <td class="green lighten-4">うん</td>
+          <td>Markdown Hereは、<code class="lang-plaintext">Enter</code>キーを押して行を分割することと互換性があります。</td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#bold" target="_blank">大胆な</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#italics" target="_blank">イタリック</a></td>
+          <td class="yellow lighten-4">部分的</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#blockquote" target="_blank">Blockquote</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#lists-ordered" target="_blank">注文リスト</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#lists-unordered" target="_blank">順序付けられていないリスト</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#code" target="_blank">コード</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#horizontal-rule" target="_blank">水平線</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#links" target="_blank">Links</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#images" target="_blank">画像</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-tables" target="_blank">テーブル</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#fenced-code-block" target="_blank">フェンスで囲まれたコードブロック</a></td>
+          <td class="green lighten-4">うん</td>
+          <td>ブロックのコンテンツの構文を強化することも、Markdown Hereを使用して可能です。</td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-footnotes" target="_blank">脚注</a></td>
+          <td class="red lighten-4">番号</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-title-id" target="_blank">タイトルID</a></td>
+          <td class="red lighten-4">番号</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-definition-lists" target="_blank">定義リスト</a></td>
+          <td class="red lighten-4">番号</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-strikethrough" target="_blank">取り消し線</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-task-lists" target="_blank">タスクリスト</a></td>
+          <td class="red lighten-4">番号</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#emojis-copy-and-paste" target="_blank">Emoji (コピーアンドペースト)</a></td>
+          <td class="white lighten-4">わからない</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#emojis-access-code" target="_blank">Emoji (アクセスコード)</a></td>
+          <td class="white lighten-4">わからない</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-auto-link" target="_blank">URLの自動Link</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-disable-auto-link" target="_blank">URLの自動linkを無効にする</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#html" target="_blank">HTML</a></td>
+          <td class="green lighten-4">うん</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="see-also">も参照してください</h2>
+
+    <p><a href="https://github.com/adam-p/markdown-here/wiki/Compatibility" target="_blank">Markdown Here: 互換性リスト</a></p>
+    <p><a href="https://github.com/adam-p/markdown-here" target="_blank">Markdown Here: GitHubのリポジトリ</a></p>
+  </div> <!-- Fim do conteúdo principal -->
+</div>
+            <div class="col-12">
+  <ul class="collapsible">
+    <li class="active">
+      <div class="collapsible-header grey lighten-4"><i class="material-icons">share</i>共有</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a href="#!" class="collection-item" data-sharer="twitter" data-title="Markdown Here®--Markdown™Cheatsheet [完全なフォーマット表]" data-hashtags="markdown" data-url="https://ja.markdown.net.br/tools/markdown-here/">
+            <i class="fab fa-twitter color-twitter"></i>&nbsp;&nbsp;Twitterで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="facebook" data-hashtag="markdown" data-url="https://ja.markdown.net.br/tools/markdown-here/">
+            <i class="fab fa-facebook color-facebook"></i>&nbsp;&nbsp;Facebookでシェア
+          </a>
+          <a href="#!" class="collection-item" data-sharer="linkedin" data-url="https://ja.markdown.net.br/tools/markdown-here/">
+            <i class="fab fa-linkedin color-linkedin"></i>&nbsp;&nbsp;Linkedinで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="email" data-title="Markdown Here®--Markdown™Cheatsheet [完全なフォーマット表]" data-url="https://ja.markdown.net.br/tools/markdown-here/" data-subject="こんにちは！はい？このマークダウンガイドは非常にわかりやすいと思いました。できる限り見てください。それがもっと役立つことを願っています。" data-to="email@host.com">
+            <i class="fas fa-envelope color-email"></i>&nbsp;&nbsp;メールで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="whatsapp" data-title="Markdown Here®--Markdown™Cheatsheet [完全なフォーマット表]" data-url="https://ja.markdown.net.br/tools/markdown-here/">
+            <i class="fab fa-whatsapp color-whatsapp"></i>&nbsp;&nbsp;Whatsappで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="telegram" data-title="Markdown Here®--Markdown™Cheatsheet [完全なフォーマット表]" data-url="https://ja.markdown.net.br/tools/markdown-here/" data-to="(00) 99999-9999">
+            <i class="fab fa-telegram color-telegram"></i>&nbsp;&nbsp;電報で共有
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+          </div>
+          <!-- Table of contents -->
+          <div class="col hide-on-small-only m3 xl3 offset-xl1">
+            <div class="toc-wrapper" id="sticky-navigator">
+            </div>
+          </div>
+          <!-- Table of contents -->
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer docs-footer">
+  <div class="container">
+    <div class="row" style="margin-bottom: 0;">
+      <div class="col s12 m10 offset-m1">
+        <div class="row">
+          <div class="col l4 s12" style="overflow: hidden;">
+            <a href="https://twitter.com/CodigoNetwork" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">@CodigoNetworkをフォローする</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div>
+            &copy;&nbsp;<noscript>2020</noscript><script type="text/javascript">document.write(new Date().getFullYear());</script> <strong>Markdown</strong>, 全著作権所有.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--  Scripts-->
+    <script src="/assets/js/bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.js" integrity="sha256-1baFoczEXwdtWBiZ6gbu7W1kn6XfPgKY4LkQQYNHTkM=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-asciidoc.min.js" integrity="sha256-Z6qgXS53J00CrN9qHl3CxGqX2A3qs6HwGi96bnk2e4w=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-markdown.min.js" integrity="sha256-LVbOCHxYsNr9pF5KGdB2NphtO2FKM92SGFxRkWc9Ovg=" crossorigin="anonymous"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.youtube.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.picture.min.js"></script>
+    <!-- Lightbox das imagens -->
+    <script>
+      $(document).ready(function(){
+         $('.materialboxed').materialbox();
+
+         $('picture.lazy-img.unloaded, img.lazy-img, iframe.lazy-yt.unloaded').Lazy({
+             effect: 'fadeIn',
+             effectTime: 1000
+             // called after an element was successfully handled
+             // afterLoad: function(element) {
+             // // Remove a animação do loader da imagem
+             //     // element.height(element.closest('.img-lazy-container').find('.image-placeholder').height());
+
+             //     element.removeClass('unloaded');
+             // }
+         });
+       });
+      anchors.add("h2, h3, h5");
+      $('#sticky-navigator').stickyNavigator();
+    </script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+</html>

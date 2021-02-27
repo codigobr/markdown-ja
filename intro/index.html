@@ -1,0 +1,1351 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69958365-6"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-69958365-6');
+    </script>
+    <!-- Auto ads - Google -->
+    <script data-ad-client="ca-pub-3427355473051563" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="canonical" href="https://ja.markdown.net.br/intro/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="author" content="Robert Salles">
+    <meta name="description" content="世界で最も人気のあるマークアップ言語を使用する方法の最も実用的な例を含む、初心者向けの完全なMarkdown™チュートリアル。">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ja.markdown.net.br/intro/">
+    <meta property="og:title" content="Markdown®イントロ：基本的な言語の概念[すばやく簡単]">
+    <meta property="og:description" content="世界で最も人気のあるマークアップ言語を使用する方法の最も実用的な例を含む、初心者向けの完全なMarkdown™チュートリアル。">
+    <meta property="og:image" content="https://markdown.net.br/assets/img/markdown.jpg">
+
+    <title>Markdown®イントロ：基本的な言語の概念[すばやく簡単]</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2196f3">
+    <meta name="msapplication-TileColor" content="#2196f3">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#2196f3">
+    <!-- CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.css" integrity="sha256-nOfkEPu/TzBvIxN8D/vW8weOUczzDbxRjgik/hA2hBI=" crossorigin="anonymous" />
+    <style type="text/css">
+    	.mv-40 {
+    		margin-top: 40px;
+    		margin-bottom: 40px;
+    	}
+
+    	img[src=""],
+    	img:not([src]) {
+    	  visibility: hidden;
+    	}
+
+    	.caption {
+    	    display: flex;
+    	    justify-content: center;
+    	    align-items: center;
+    	    margin: 10px 0;
+    	    color: hsl(0deg 0% 33%);
+    	    font-style: italic;
+    	    font-size: 75%;
+    	}
+
+    	picture {
+    		display: block;
+    		position: relative;
+    	}
+
+    	.cover-link {
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    	}
+    </style>
+  </head>
+  <body class="themes" cz-shortcut-listen="true">
+    <header>
+      <div class="container">
+  <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger waves-effect waves-light circle">
+  <i class="material-icons">menu</i>
+  </a>
+</div>
+<ul id="nav-mobile" class="sidenav">
+  <li class="logo blue">
+    <a id="logo-container" href="/" class="brand-logo">
+    <img src="https://markdown.net.br/assets/img/markdown-logo-transparent.svg" height="100">
+    </a>
+  </li>
+  <li class="push-it-down"></li>
+  <li class="search white">
+    <div class="search-wrapper">
+      <input id="search" placeholder="Buscar"><i class="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li>
+  <li class="bold white">
+    <a href="/intro/" class="waves-effect waves-blue"><i class="tiny material-icons">child_care</i>前書き</a>
+  </li>
+  <li class="bold white">
+    <a href="/basic-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">short_text</i>基本構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/extended-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">format_align_left</i>拡張構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/cheatsheet/" class="waves-effect waves-blue"><i class="tiny material-icons">help_outline</i>クイックリファレンス</a>
+  </li>
+  <li class="bold white">
+    <a href="/tools/" class="waves-effect waves-blue"><i class="tiny material-icons">card_travel</i>ツール</a>
+  </li>
+</ul>
+    </header>
+    <main>
+      <div class="section" id="index-banner">
+        <div class="container">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m6 l7 offset-m1 offset-l1">
+              <h1>Markdownの紹介</h1>
+              <h4 class="light">Markdownで旅を始めるために知っておくべきことすべて。</h4>
+              <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" href="https://markdown.net.br/">
+                      <span itemprop="name">Markdown</span></a>
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li>
+<i class="fas fa-chevron-right chevron-separator"></i>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<span itemprop="name">Markdownの紹介</span>
+<meta itemprop="position" content="2" />
+</li>
+
+              </ol>
+            </div>
+            <div class="col s12 m5 l4 mt-s-30" align="center">
+            	<!-- square-fixed-300-250 -->
+            	<ins class="adsbygoogle"
+            	     style="display:inline-block;width:300px;height:250px"
+            	     data-ad-client="ca-pub-3427355473051563"
+            	     data-ad-slot="1035906960"></ins>
+            	<script>
+            	     (adsbygoogle = window.adsbygoogle || []).push({});
+            	</script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!--  Outer row  -->
+        <div class="row">
+          <div class="section col s12 m8 offset-m1 xl7 offset-xl1">
+            <div class="row scrollspy">
+  <div class="col s12">
+    <h2 id="markdown">Markdownとは何ですか？</h2>
+
+    <p>Markdownは、すべてのタイプのドキュメントのフォーマットに使用されるマークアップ言語であり、2004年に<a href="https://daringfireball.net/projects/markdown/" target="_blank">JohnGruber</a>とAaronSwartzによって作成されました。現在、プログラマーの間で最も人気のある言語の1つです。</p>
+
+    <p>ウィキペディアによると：</p>
+
+    <div class="image-container">
+    	<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-wikipedia_w615.webp 615w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w556.webp 556w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w497.webp 497w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w438.webp 438w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w379.webp 379w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w320.webp 320w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w261.webp 261w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w202.webp 202w"
+		         sizes="(max-width: 615px) 100vw, 615px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-ウィキペディアからのMarkdownの定義"
+		        	title="Markdownチュートリアル-ウィキペディアからのMarkdownの定義"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-wikipedia_w615.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-wikipedia_w615.png 615w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w556.png 556w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w497.png 497w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w438.png 438w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w379.png 379w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w320.png 320w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w261.png 261w,
+https://markdown.net.br/assets/img/intro/markdown-wikipedia_w202.png 202w"
+		         	sizes="(max-width: 615px) 100vw, 615px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-wikipedia_w615.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>ウィキペディアからのMarkdownの定義</span>
+		</figcaption>
+		</figure>
+    </div>
+
+    <blockquote><strong>注</strong>：マークアップ言語は、<i>tags</i>または記号を使用してコンテンツにスタイルを適用する言語であり、世界で最も人気のあるマークアップ言語はHTML、XML、Markdownです。</blockquote>
+
+    <p>下の画像では、テキストエディタ<a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a>でMarkdownでフォーマットされたファイルを見ることができます。</p>
+
+    <div class="image-container">
+    	<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-sublime-text_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Sublime TextでのMarkdownフォーマットの例"
+		        	title="Markdownチュートリアル-Sublime TextでのMarkdownフォーマットの例"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-sublime-text_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-sublime-text_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w972.png 972w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w818.png 818w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w510.png 510w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w356.png 356w,
+https://markdown.net.br/assets/img/intro/markdown-sublime-text_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-sublime-text_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Sublime TextでMarkdownをフォーマットする例</span>
+		</figcaption>
+		</figure>
+    </div>
+
+    <p>MarkdownまたはMDファイルはプレーンテキストで構成されており、理解しやすく、コンテンツを汚染するHTMLマークアップがすべて含まれているわけではありません。</p>
+
+    <blockquote><strong>注</strong>：MDはMarkdownの略語です。</blockquote>
+
+    <p>Markdownを使用すると、シンボルマークアップを使用してドキュメントに書式を追加できます。</p>
+
+    <p>Markdown形式は、一部の<i>WYSIWYG</i>エディターで使用される形式とは異なることに注意することが重要です。</p>
+
+    <blockquote><strong>注</strong>：WYSIWYGは、<i> What You See Is What You Get </i>の略語です。基本的に、コンテンツのフォーマットはリアルタイムで行われます。つまり、すぐに表示されます。詳細については、この<a href="https://ja.wikipedia.org/wiki/WYSIWYG" target="_blank">ウィキペディアの記事</a>を参照してください。</blockquote>
+
+    <p>たとえば、WYSIWYGエディターであるMicrosoft Wordでは、特定のコンテンツを選択して特定のボタン、キーの組み合わせ、またはいくつかのメニューオプションを押すと、テキストの書式設定が行われます。</p>
+
+    <div class="image-container">
+    	<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w488.webp 488w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w416.webp 416w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w344.webp 344w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w272.webp 272w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w200.webp 200w"
+		         sizes="(max-width: 488px) 100vw, 488px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="MarkdownチューMicrosoft Wordウィンドウ-WYSIWYG"
+		        	title="MarkdownチューMicrosoft Wordウィンドウ-WYSIWYG"
+		         	src="https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w488.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w488.png 488w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w416.png 416w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w344.png 344w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w272.png 272w,
+https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w200.png 200w"
+		         	sizes="(max-width: 488px) 100vw, 488px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/microsoft-word-wysiwyg_w488.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Microsoft Wordウィンドウ-WYSIWYG</span>
+		</figcaption>
+		</figure>
+    </div>
+
+    <p>Markdownでは、ポンド記号<code class="lang-text">＃</code>、アスタリスク<code class="lang-text">*</code>、アンダースコア<code class="lang-text">_</code>などの記号を使用して書式設定が適用されます。</p>
+
+    <p>このシンボル体系は、ファイルをHTMLに変換するときに、どの単語/フレーズをフォーマットする必要があるかを知るためにMarkdownプロセッサによって使用されます。</p>
+
+    <p class="mv-40">
+	    <ins class="adsbygoogle"
+	         style="display:block; text-align:center;"
+	         data-ad-layout="in-article"
+	         data-ad-format="fluid"
+	         data-ad-client="ca-pub-3427355473051563"
+	         data-ad-slot="3854885260"></ins>
+	    <script>
+	         (adsbygoogle = window.adsbygoogle || []).push({});
+	    </script>
+    </p>
+
+    <p>たとえば、<code class="lang-markdown">**このテキストを太字にします**</code>および<code class="lang-markdown">_このテキストを斜体で_</code></p>
+
+	<p>混乱しすぎますか？少し単純化してみましょう。</p>
+
+	<p>コンテンツを2つのアスタリスク<code class="lang-text">**</code>で囲むと、太字で強調されます。2番目の例では、アンダースコア<code class="lang-text">_</code>を使用して斜体を適用します。</p>
+
+	<h2 id="markdown-edit-file">Markdownファイルを編集する方法</h2>
+
+	<p>Markdownファイルは<code class="lang-text">テキスト</code>にすぎないため、このタスクには単純なテキストエディタで十分です。</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-notepad_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-NotepadでMarkdownドキュメントを編集する"
+		        	title="Markdownチュートリアル-NotepadでMarkdownドキュメントを編集する"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-notepad_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-notepad_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w972.png 972w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w818.png 818w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w510.png 510w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w356.png 356w,
+https://markdown.net.br/assets/img/intro/markdown-notepad_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-notepad_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>NotepadでMarkdownドキュメントを編集しています。</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<p>ただし、以下を考慮に入れるのは興味深いことです。</p>
+	<ul class="collection">
+	  <li class="collection-item green lighten-5">Markdownドキュメントを別の形式に変換できるエディター。</li>
+	  <li class="collection-item yellow lighten-5">Markdownの構文を強調表示できるエディター。</li>
+	  <li class="collection-item">
+		<ins class="adsbygoogle"
+		     style="display:block; text-align:center;"
+		     data-ad-layout="in-article"
+		     data-ad-format="fluid"
+		     data-ad-client="ca-pub-3427355473051563"
+		     data-ad-slot="3854885260"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	  </li>
+	  <li class="collection-item green lighten-5">HTMLへの変換をリアルタイムで表示するエディター</li>
+	</ul>
+
+	<p>良いニュースは次のとおりです。</p>
+	<ul class="collection">
+	  <li class="collection-item blue lighten-5">Windows、Linux、Android、さらにはiOSなど、さまざまなオペレーティングシステム用のMarkdownアプリケーションがいくつかあります。</li>
+	  <li class="collection-item orange lighten-5">Webに関しては、状況はさらに良くなり、いくつかのサイトでは、ドキュメントを編集するための無料のMarkdownアプリケーションを提供していますonline、そして最高の多くは、リアルタイムコンバーターを備えています。つまり、アプリケーションを入力すると、HTMLに変換されます。</li>
+	</ul>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-text-editors_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownテキストエディタ"
+		        	title="Markdownチュートリアル-Markdownテキストエディタ"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-text-editors_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-text-editors_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w972.png 972w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w818.png 818w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w510.png 510w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w356.png 356w,
+https://markdown.net.br/assets/img/intro/markdown-text-editors_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-text-editors_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>サイドバイサイドテキストエディタ：Notepad++、Sublime Text、Visual Studio Code。</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<blockquote><strong>注</strong>：Markdownのフォーマットは非常に単純であるため、この言語でフォーマットされたドキュメントは引き続き読み取り可能であることを覚えておく価値があります。</blockquote>
+
+    <h2 id="markdown-vs-wysiwyg">MarkdownとWYSIWYG</h2>
+
+	<p>WYSIWYGエディター（リアルタイムフォーマットを提供）が非常に便利な場合、なぜMarkdownを使用する必要があるのですか？</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-MarkdownフォーマットとWYSIWYGフォーマットの比較。"
+		        	title="Markdownチュートリアル-MarkdownフォーマットとWYSIWYGフォーマットの比較。"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w972.png 972w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w818.png 818w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w510.png 510w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w356.png 356w,
+https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-vs-wysiwyg_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownフォーマットとWYSIWYGフォーマットの比較。</span>
+		</figcaption>
+		</figure>
+	</div>
+
+    <p>WYSIWYGエディターを使用している場合、ボタンを押して必要なフォーマットを設定できますが、なぜMarkdownマークアップを使用してドキュメントを入力するのですか？</p>
+
+    <p>Markdownを使用するいくつかの理由を見てみましょう。</p>
+
+    <ul class="collection">
+		<li class="collection-item green lighten-5">Markdownは、Webサイト、書籍、プレゼンテーション、e-mails、技術文書など、ほぼすべての種類のドキュメントを作成するために使用できます。</li>
+		<li class="collection-item yellow lighten-5">Markdownの移植性は並外れています。プレーンテキストドキュメントであるため、どのテキストアプリケーションでも編集できます。 Microsoft Wordと比較すると、<code class="lang-plaintext">docx</code>形式は独自のものであり、特定のプログラムを開く必要がありますが、これは<code class="lang-plaintext">md</code>では発生しません。
+		</li>
+		<li class="collection-item">
+		    <ins class="adsbygoogle"
+		         style="display:block; text-align:center;"
+		         data-ad-layout="in-article"
+		         data-ad-format="fluid"
+		         data-ad-client="ca-pub-3427355473051563"
+		         data-ad-slot="3854885260"></ins>
+		    <script>
+		         (adsbygoogle = window.adsbygoogle || []).push({});
+		    </script>
+		</li>
+		<li class="collection-item blue lighten-5">ドキュメントを編集するときに使用するプログラムを自由に選択できます。<code class="lang-plaintext">md</code>ファイルはどこでも編集できます。</li>
+		<li class="collection-item green lighten-5">使用しているオペレーティングシステム（Windows、Mac、Android）に関係なく、Markdownは互換性があります。</li>
+		<li class="collection-item yellow lighten-5">大惨事が発生した場合でも、ドキュメントにアクセスできるようにします。お気に入りのテキストエディタは機能しなくなりましたか？サポートは終了しましたか？プログラムは有料になりましたか？問題ありません。他のテキストエディタを選択して、ドキュメントの編集とアクセスを続けてください。これは、技術文書、書籍、TCCなどのファイルにとって非常に重要です。</li>
+		<li class="collection-item blue lighten-5">巨大なMarkdownコミュニティにより、投稿をフォーマットするための標準言語として、多くのWebサイトでアクセスできるようになりました。 GitHubとRedditは、Markdownを使用する有名なサイトの例です。</li>
+		<li class="collection-item">
+		    <ins class="adsbygoogle"
+		         style="display:block; text-align:center;"
+		         data-ad-layout="in-article"
+		         data-ad-format="fluid"
+		         data-ad-client="ca-pub-3427355473051563"
+		         data-ad-slot="3854885260"></ins>
+		    <script>
+		         (adsbygoogle = window.adsbygoogle || []).push({});
+		    </script>
+		</li>
+		<li class="collection-item green lighten-5">すでに多くの人がMarkdownを使用しているので、フォーマットされたドキュメントはますます多くの人に理解されるでしょう。</li>
+  	</ul>
+
+
+  	<h2 id="markdown-practicing">練習</h2>
+
+  	<p>学ぶための最良の方法は練習することです！</p>
+
+  	<p>言語の構文を学びながら、Markdownエディターを利用できるのは興味深いことです。</p>
+
+  	<p>Markdownの練習を開始する最も簡単な方法は、onlineエディターを使用することです。 Webのアプリでは、何もダウンロードする必要はありません。Webサイトにアクセスして、<code class="lang-text">md</code>ファイルの編集を開始してください。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-online-editors_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-編集者online、StackEdit、Dillinger、Editor.md"
+		        	title="Markdownチュートリアル-編集者online、StackEdit、Dillinger、Editor.md"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-online-editors_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-online-editors_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w972.png 972w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w818.png 818w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w510.png 510w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w356.png 356w,
+https://markdown.net.br/assets/img/intro/markdown-online-editors_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-online-editors_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>編集者online、StackEdit、Dillinger、Editor.md</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<p><a href="https://stackedit.io/app" target="_blank">StackEdit</a>、<a href="https://dillinger.io/" target="_blank">Dillinger</a>、<a href="/editor/" target="_blank">Editor.md (Markeditor）</a>から始めるとよいでしょう。</p>
+
+  	<blockquote><strong>注</strong>：ブラウザの別のタブでonlineエディタの1つを開いて、Markdown構文をリアルタイムでトレーニングします。</blockquote>
+
+  	<h3>StackEdit</h3>
+
+  	<p><a href="https://stackedit.io/app" target="_blank">StackEdit</a>は最も完全なアプリケーションの1つです。エディターに加えて、右側のパネルにHTMLをレンダリングするリアルタイムコンバーターも提供します。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/stackedit-interface_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-StackEditインターフェース"
+		        	title="Markdownチュートリアル-StackEditインターフェース"
+		         	src="https://markdown.net.br/assets/img/intro/stackedit-interface_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/stackedit-interface_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w972.png 972w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w818.png 818w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w664.png 664w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w510.png 510w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w356.png 356w,
+https://markdown.net.br/assets/img/intro/stackedit-interface_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/stackedit-interface_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownStackEdiエディターのWebインターフェイス</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<p><a href="/tools/stackedit/" target="_blank">StackEdit</a>の詳細については、ツールのセクションを参照してください。</p>
+
+  	<h3>Dillinger</h3>
+
+  	<p><a href="https://dillinger.io/" target="_blank">Dillinger</a>のインターフェースは非常にシンプルですが、Markdownドキュメントを編集するためのいくつかのオプションがあります。リアルタイム変換に加えて、ファイルをHTMLおよびPDF形式にエクスポートすることもできます</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/dillinger-interface_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="マークダウンチュートリアル-DillingerWebインターフェイス"
+		        	title="マークダウンチュートリアル-DillingerWebインターフェイス"
+		         	src="https://markdown.net.br/assets/img/intro/dillinger-interface_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/dillinger-interface_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w972.png 972w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w818.png 818w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w664.png 664w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w510.png 510w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w356.png 356w,
+https://markdown.net.br/assets/img/intro/dillinger-interface_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/dillinger-interface_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownDillingerエディターのWebインターフェイス</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<p>Dillinger の詳細については、<a href="/tools/dillinger/" target="_blank">ここをクリック</a>してください。</p>
+
+  	<h3>Editor.md (Markeditor)</h3>
+
+  	<p><a href="/editor/" target="_blank">Editor.md</a>はオープンソースツールであり、リアルタイムでHTML用のMDコンバーターと、ワンクリックでMarkdown要素を作成できるボタンを備えています。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/editor-md-interface_w1268.webp 1268w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w1115.webp 1115w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w962.webp 962w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w809.webp 809w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w656.webp 656w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w503.webp 503w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w350.webp 350w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w197.webp 197w"
+		         sizes="(max-width: 656px) 100vw, 656px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="MarkdownチューMarkdownエディターEditor.mdのWebインターフェース"
+		        	title="MarkdownチューMarkdownエディターEditor.mdのWebインターフェース"
+		         	src="https://markdown.net.br/assets/img/intro/editor-md-interface_w1268.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/editor-md-interface_w1268.png 1268w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w1115.png 1115w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w962.png 962w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w809.png 809w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w656.png 656w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w503.png 503w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w350.png 350w,
+https://markdown.net.br/assets/img/intro/editor-md-interface_w197.png 197w"
+		         	sizes="(max-width: 656px) 100vw, 656px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/editor-md-interface_w1268.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownエディターEditor.mdのWebインターフェース</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<h3 id="now-what">その後？</h3>
+
+  	<p>経験を積んだ後、オペレーティングシステム用のアプリケーションをダウンロードして、ローカルでドキュメントの編集を開始できます。</p>
+
+  	<p><a href="/tools/" target="_blank">ツール</a>セクションには、アプリケーションの広範なリストと、それらの使用方法の説明、およびMarkdown要素との互換性に関する情報があります。</p>
+
+  	<p class="mv-40">
+  	    <ins class="adsbygoogle"
+  	         style="display:block; text-align:center;"
+  	         data-ad-layout="in-article"
+  	         data-ad-format="fluid"
+  	         data-ad-client="ca-pub-3427355473051563"
+  	         data-ad-slot="3854885260"></ins>
+  	    <script>
+  	         (adsbygoogle = window.adsbygoogle || []).push({});
+  	    </script>
+  	</p>
+
+  	<p>さて、Markdownを練習するために利用できるエディターができたので、あるフォーマットから別のフォーマットへの変換がどのように機能するかを理解しましょう。</p>
+
+
+  	<h2 id="markdown-convert-file">Markdownファイルを変換する方法</h2>
+
+  	<p><code class="lang-text">md</code>ファイルを別の形式（通常はHTMLまたはPDF）に変換するためにMarkdownアプリケーションが使用する手順を理解しましょう。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w517.webp 517w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w438.webp 438w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w359.webp 359w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w280.webp 280w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w201.webp 201w"
+		         sizes="(max-width: 517px) 100vw, 517px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownファイルを変換する方法"
+		        	title="Markdownチュートリアル-Markdownファイルを変換する方法"
+		         	src="https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w517.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w517.png 517w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w438.png 438w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w359.png 359w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w280.png 280w,
+https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w201.png 201w"
+		         	sizes="(max-width: 517px) 100vw, 517px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/how-to-convert-markdown-file_w517.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownファイルを変換する方法</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<h3 id="markdown-simplicity">Markdownのシンプルさ</h3>
+
+  	<p>Markdownファイルをどのように識別しますか？ひいては、正しいですか？通常、<code class="lang-text">md</code>または<code class="lang-text">markdown</code>。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-file-extensions_w1052.webp 1052w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w930.webp 930w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w808.webp 808w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w686.webp 686w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w564.webp 564w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w442.webp 442w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w320.webp 320w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w198.webp 198w"
+		         sizes="(max-width: 686px) 100vw, 686px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownファイル拡張子"
+		        	title="Markdownチュートリアル-Markdownファイル拡張子"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-file-extensions_w1052.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-file-extensions_w1052.png 1052w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w930.png 930w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w808.png 808w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w686.png 686w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w564.png 564w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w442.png 442w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w320.png 320w,
+https://markdown.net.br/assets/img/intro/markdown-file-extensions_w198.png 198w"
+		         	sizes="(max-width: 686px) 100vw, 686px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-file-extensions_w1052.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownファイル拡張子</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<p>Markdownファイルはプレーンテキストであり、フォーマットがなく、暗号化されたファイルではなく、コンパイルされていません。</p>
+
+  	<blockquote><strong>注</strong>：この単純さにより、プログラムはMarkdown要素を識別する記号についてテキストを分析できます。</blockquote>
+
+  	<p>エディターに加えて、いくつかのMarkdownアプリケーションにもコンバーターが統合されています。コンバーターは、Markdown構文を別のフォーマットされた構文に変換する役割を果たします。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-html-pdf_w737.webp 737w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w660.webp 660w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w583.webp 583w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w506.webp 506w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w429.webp 429w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w352.webp 352w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w275.webp 275w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w198.webp 198w"
+		         sizes="(max-width: 737px) 100vw, 737px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdown形式から生成されたファイル"
+		        	title="Markdownチュートリアル-Markdown形式から生成されたファイル"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-html-pdf_w737.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-html-pdf_w737.png 737w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w660.png 660w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w583.png 583w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w506.png 506w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w429.png 429w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w352.png 352w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w275.png 275w,
+https://markdown.net.br/assets/img/intro/markdown-html-pdf_w198.png 198w"
+		         	sizes="(max-width: 737px) 100vw, 737px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-html-pdf_w737.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>フォーマットされたMarkdownから生成されたファイル</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<h3 id="markdown-how-conversion-works">変換の方法</h3>
+
+  	<p>Markdownコンバーターは、パーサーを使用してコンテンツをスキャンし、Markdownと互換性のあるマーキングを探します。互換性のあるマークアップを見つけると、パーサーは出力形式（たとえば、同じ形式を生成するHTMLタグ）で一致するものをチェックします。</p>
+
+  	<p>以下に、MarkdownマーカーとHTMLタグ間の対応の表の例を示します。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w850.webp 850w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w757.webp 757w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w571.webp 571w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w478.webp 478w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w385.webp 385w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w292.webp 292w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w199.webp 199w"
+		         sizes="(max-width: 757px) 100vw, 757px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-HTMLとのMarkdown構文の比較-表"
+		        	title="Markdownチュートリアル-HTMLとのMarkdown構文の比較-表"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w850.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w850.png 850w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w757.png 757w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w571.png 571w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w478.png 478w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w385.png 385w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w292.png 292w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w199.png 199w"
+		         	sizes="(max-width: 757px) 100vw, 757px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-syntax-vs-html-syntax_w850.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdown構文とHTML構文の比較表。</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<p>HTML形式は、Markdownの変換に関して最もよく使用される形式の1つであることに注意してください。 HTMLに変換されたファイルは、Google Chrome、Mozilla Firefox、Microsoft EdgeなどのWebブラウザーで表示できます。</p>
+
+  	<p>下の画像では、変換プロセスの簡略化されたバージョンを見ることができます。</p>
+
+  	<div class="image-container">
+  		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w500.webp 500w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w425.webp 425w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w350.webp 350w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w275.webp 275w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w200.webp 200w"
+		         sizes="(max-width: 500px) 100vw, 500px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-MarkdownをHTMLに変換するプロセス"
+		        	title="Markdownチュートリアル-MarkdownをHTMLに変換するプロセス"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w500.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w500.png 500w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w425.png 425w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w350.png 350w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w275.png 275w,
+https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w200.png 200w"
+		         	sizes="(max-width: 500px) 100vw, 500px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-html-conversion-process_w500.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownとHTMLの間でカバーがどのように作成されるかを示す簡単な図。</span>
+		</figcaption>
+		</figure>
+  	</div>
+
+  	<blockquote><strong>注</strong>：より堅牢なアプリケーションでは、コンポーネントを分離でき、さらには互いに独立している可能性があることに注意することが重要です。エディター、コンバーター、パーサーなど。上の画像は、手順がどのように行われるかを単純に表したものです。</blockquote>
+
+
+  	<p>変換を4つのステップで要約しましょう。</p>
+    <ul class="collection">
+		<li class="collection-item green lighten-5">まず、Markdownファイルを作成する必要があります。そのために、ドキュメントを保存するときに拡張子<code class="lang-text">md</code>または<code class="lang-text">markdown</code>を追加します。編集中は、どのテキストエディタでもかまいません。</li>
+		<li class="collection-item yellow lighten-5">次に、ファイルをMarkdownアプリケーションにロードします。</li>
+		<li class="collection">
+		    <ins class="adsbygoogle"
+		         style="display:block; text-align:center;"
+		         data-ad-layout="in-article"
+		         data-ad-format="fluid"
+		         data-ad-client="ca-pub-3427355473051563"
+		         data-ad-slot="3854885260"></ins>
+		    <script>
+		         (adsbygoogle = window.adsbygoogle || []).push({});
+		    </script>
+		</li>
+		<li class="collection-item blue lighten-5">別の形式、この場合はHTMLに変換する時が来ました。このステップでは、Markdown専用のアプリケーションが不可欠です。</li>
+		<li class="collection-item orange lighten-5">変換結果を表示します。 HTMLの場合は、ブラウザでファイルを開くだけです。</li>
+	</ul>
+
+  	<p>いくつかのポイントを強調する必要があります</p>
+
+    <ul class="collection">
+		<li class="collection-item green lighten-5">この手順は、Markdownファイルを編集している場所によって異なる場合があります。</li>
+		<li class="collection-item yellow lighten-5">単純な編集、つまり一般的なエディターを使用することについて話すとき、これらのステップはより明白です。</li>
+		<li class="collection-item orange lighten-5">Dillinger、StackEdit、Editor.mdなどのonlineパブリッシャーの場合、ステップ2、3、および4がこれらのアプリケーションのグラフィカルインターフェイスに直接マージされます。</li>
+	</ul>
+
+	<h2 id="markdown-usage">Markdownを使用する</h2>
+
+	<p>Webのコンテンツを作成することは、Markdownを使用する最も一般的な方法です。 HTMLページの生成だけでなく、簡単なコメントの作成から技術文書の作成まで、あらゆる種類の投稿の作成と編集においても。</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/reddit-markdown-post_w806.webp 806w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w719.webp 719w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w632.webp 632w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w545.webp 545w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w458.webp 458w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w371.webp 371w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w284.webp 284w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w197.webp 197w"
+		         sizes="(max-width: 719px) 100vw, 719px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownを使用したRedditへの投稿"
+		        	title="Markdownチュートリアル-Markdownを使用したRedditへの投稿"
+		         	src="https://markdown.net.br/assets/img/intro/reddit-markdown-post_w806.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/reddit-markdown-post_w806.png 806w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w719.png 719w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w632.png 632w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w545.png 545w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w458.png 458w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w371.png 371w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w284.png 284w,
+https://markdown.net.br/assets/img/intro/reddit-markdown-post_w197.png 197w"
+		         	sizes="(max-width: 719px) 100vw, 719px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/reddit-markdown-post_w806.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownを使用してRedditに投稿する</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<p>タスクリスト、e-mailsメッセージ、買い物リストなどをフォーマットすることもできます。</p>
+
+	<p>以下に、Markdownを使用して作成できるドキュメントの例をいくつか示します。</p>
+
+	<h3 id="markdown-Websites">ウェブサイト</h3>
+
+	<p>JohnGruberとAaronSwartzは、Internetを念頭に置いてMarkdownを開発したため、Webのコンテンツを作成することがこの言語の最大の魅力の1つになりました。</p>
+
+	<p>Markdownと互換性のある多くのアプリケーションは、すでにコンテンツを自動的にHTMLに変換しています。</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="MarkdownチューMarkdownからHTMLへの自動変換"
+		        	title="MarkdownチューMarkdownからHTMLへの自動変換"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w972.png 972w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w818.png 818w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w664.png 664w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w510.png 510w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w356.png 356w,
+https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-to-html-real-time_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>MarkdownからHTMLへの自動変換</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<p>Markdownフォーマットを基本として使用して完全なサイトを作成できます。それがあなたのやりたいことなら、<a href="/tools/jekyll/" target="_blank">Jekyll</a>や<a href="/tools/mkdocs/" target="_blank">MkDocs</a>のようなツールがあなたのニーズを満たすことができます。</p>
+
+	<p>JekyllとMkDocsは、Markdownドキュメントから静的Webサイトを生成するツールです。 Webサイトを作成するときは、HTML、CSS、さらにはGitを使用したファイルのバージョン管理について最低限の知識があることは興味深いことです。</p>
+
+    <p class="mv-40">
+	    <ins class="adsbygoogle"
+	         style="display:block; text-align:center;"
+	         data-ad-layout="in-article"
+	         data-ad-format="fluid"
+	         data-ad-client="ca-pub-3427355473051563"
+	         data-ad-slot="3854885260"></ins>
+	    <script>
+	         (adsbygoogle = window.adsbygoogle || []).push({});
+	    </script>
+    </p>
+
+	<p><a href="/tools/github-pages/" target="_blank">GitHub Pages</a>は静的ウェブサイトの無料ホスティングを提供します。</p>
+
+	<p>コンテンツマネージャーとしてより堅牢なもの、有名なCMSが必要な場合は、<a href="/tools/ghost/" target="_blank">Ghost</a>をご覧ください。</p>
+
+	<p>Ghostは、bloggers用の無料のオープンソースプラットフォームです。このツールには、Markdownエディターも組み込まれています。</p>
+
+	<p>WordPressを使用していますか？ WordPress.comでホストされているサイトは、すでにMarkdownをサポートしていますが、それでも、他のホスティングサーバーにあるサイトにはJetpackプラグインを使用できます。</p>
+
+
+	<h3 id="markdown-formatting-text">テキストをフォーマットする</h3>
+
+	<p>Markdownのシンプルさは、Microsoft WordのようなWYSIWYGエディターの派手なオプションをすべて排除しますが、それでもドキュメントを編集するのに十分なフォーマットを提供します。</p>
+
+	<p>太字、斜体、取り消し線は、もちろん、リスト、タイトル、blockquotesなどに加えて、言語によってサポートされています。</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-syntax-output_w852.webp 852w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w759.webp 759w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w666.webp 666w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w573.webp 573w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w480.webp 480w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w387.webp 387w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w294.webp 294w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w201.webp 201w"
+		         sizes="(max-width: 759px) 100vw, 759px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownでの太字、斜体、取り消し線での書式設定"
+		        	title="Markdownチュートリアル-Markdownでの太字、斜体、取り消し線での書式設定"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-syntax-output_w852.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-syntax-output_w852.png 852w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w759.png 759w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w666.png 666w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w573.png 573w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w480.png 480w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w387.png 387w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w294.png 294w,
+https://markdown.net.br/assets/img/intro/markdown-syntax-output_w201.png 201w"
+		         	sizes="(max-width: 759px) 100vw, 759px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-syntax-output_w852.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdownでの太字、斜体、取り消し線での書式設定</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<p>Markdownを使用してドキュメントをフォーマットするもう1つの利点は、基本的に他のテキストファイルフォーマットに変換できることです。</p>
+
+	<p>以下は、Markdownドキュメントを作成/編集するためのアプリケーションのリストです。</p>
+
+    <ul class="collection">
+		<li class="collection-item">Windows: <a href="https://wereturtle.github.io/ghostwriter/" target="_blank">ghostwriter</a> または <a href="https://markdownmonster.west-wind.com/" target="_blank">Markdown Monster</a></li>
+		<li class="collection-item">Linux: <a href="https://github.com/retext-project/retext" target="_blank">ReText</a> または <a href="https://wereturtle.github.io/ghostwriter/" target="_blank">ghostwriter</a></li>
+		<li class="collection-item">Mac: <a href="/tools/macdown/" target="_blank">MacDown</a>, <a href="/tools/ia-writer/" target="_blank">iA Writer</a> または <a href="https://marked2app.com/" target="_blank">Marked</a></li>
+		<li class="collection-item">Web: <a href="/tools/dillinger/" target="_blank">Dillinger</a> または <a href="https://stackedit.io/app" target="_blank">StackEdit</a></li>
+		<li class="collection-item">iOS / Android: <a href="/tools/ia-writer/" target="_blank">iA Writer</a></li>
+	</ul>
+
+
+	<h3 id="markdown-note-taking">ノート</h3>
+
+	<p>Markdownは、メモを取るのに最適な言語です。</p>
+
+	<p>これは、Markdown互換アプリケーションのリストです。</p>
+
+    <ul class="collection">
+		<li class="collection-item"><a href="/tools/notable/" target="_blank">Notable</a>: いくつかのプラットフォームとの互換性で際立っています。</li>
+		<li class="collection-item"><a href="/tools/bear/" target="_blank">Bear</a>: Appleテリトリーに入りました。BearはMacおよびiOSと互換性があり、デフォルトではMarkdownを使用しませんが、アクティブ化できます。 BearはEvernoteと非常によく似ています。</li>
+		<li class="collection-item">
+		    <ins class="adsbygoogle"
+		         style="display:block; text-align:center;"
+		         data-ad-layout="in-article"
+		         data-ad-format="fluid"
+		         data-ad-client="ca-pub-3427355473051563"
+		         data-ad-slot="3854885260"></ins>
+		    <script>
+		         (adsbygoogle = window.adsbygoogle || []).push({});
+		    </script>
+		</li>
+		<li class="collection-item"><a href="/tools/simplenote/" target="_blank">Simplenote</a>: それは無料で、シンプルで、メモを保存します。すべてのプラットフォームで利用できます。</li>
+		<li class="collection-item"><a href="/tools/boostnote/" target="_blank">Boostnote</a>: オープンソースコードに加えて、プログラマーに焦点を当てています。</li>
+	</ul>
+
+	<p>Evernoteはどうですか？ OneNote？誰か...？</p>
+
+	<p>だからそれは...</p>
+
+	<p>アプリのメモを取ることになると、<a href="https://evernote.com/" target="_blank">Evernote</a>と<a href="https://www.onenote.com/" target="_blank">OneNote</a>が間違いなく最も人気があります。残念ながら、2つのプログラムは、デフォルトではMarkdownをサポートしていません。</p>
+
+	<p>Evernoteの場合、<a href="/tools/markdown-here/" target="_blank">Markdown Here</a>または<a href="https://marxi.co/" target="_blank">Marxico</a>を使用できます。</p>
+
+	<blockquote><strong>注</strong>：Markdown Hereは、Markdown構文を使用して電子メールを作成できるようにするブラウザーの拡張機能です。これと同じ拡張機能をEvernoteWebサイトで使用できます。</blockquote>
+
+	<h3 id="markdown-books">本</h3>
+
+	<p>Markdownを使って本を書くとはどういう意味ですか？</p>
+
+	<p>そうです、<a href="https://leanpub.com/" target="_blank">Leanpub</a>のようなサービスはベースとしてMarkdownファイルを使用し、変換はEPUB、MOBI、およびPDFに対して行われます。</p>
+
+	<p>電子書籍はあまり好きではありませんか？</p>
+
+	<p>生成された電子書籍のファイルを使用して、<a href="https://kdp.amazon.com/" target="_blank">Kindle Direct Publishing</a>などの他のサービスにアップロードし、物理的なコピーを作成できます。</p>
+
+
+	<h3 id="markdown-slide-presentations">slidesプレゼンテーション</h3>
+
+	<p>はい、あなたはその権利を読んでいます、あなたはMarkdownを使用してslidesからプレゼンテーションを作成することができます。</p>
+
+	<p><a href="https://remarkjs.com/" target="_blank">Remark</a>、<a href="https://jdan.github.io/cleaver/" target="_blank">Cleaver</a>、<a href="https://github.com/adamzap/landslide" target="_blank">Landslide</a>は、ブラウザで直接slidesプレゼンテーションを生成するツールであり、すべて<code class="lang-text">md</code>ファイルをベースとして使用します。</p>
+
+	<p>アプリを使用したいですか？ macOSでは、<a href="https://marked2app.com/" target="_blank">Marked</a>または<a href="https://www.decksetapp.com/" target="_blank">Deckset</a>を参照できます。 Windowsでは、<a href="https://pandoc.org/" target="_blank">Pandoc</a>を使用してMarkdownをslidesに変換できます。</p>
+
+	<p>Markdownマークアップを使用してプレゼンテーションを生成するのは時間の無駄に思えるかもしれませんが、少し練習すれば、<a href="https://www.microsoft.com/pt-br/microsoft-365/powerpoint" target="_blank">PowerPoint</a>や<a href="https://www.apple.com/br/keynote/" target="_blank">Keynote</a>などのツールを使用するよりもはるかに簡単で高速であることがわかります。</p>
+
+	<h3 id="markdown-emails">E-mails</h3>
+
+	<p>ほとんどの電子メールプロバイダーは、インターフェイスに統合されたWYSIWYGエディターを提供しますが、それに直面しましょう。多くは不十分であり、一方では多くの複雑さがあり、他方ではフォーマットオプションが不足しています。</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w973.webp 973w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w863.webp 863w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w753.webp 753w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w643.webp 643w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w533.webp 533w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w423.webp 423w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w313.webp 313w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w203.webp 203w"
+		         sizes="(max-width: 753px) 100vw, 753px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="マークダウンチュートリアル-Gmailメール作成インターフェース"
+		        	title="マークダウンチュートリアル-Gmailメール作成インターフェース"
+		         	src="https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w973.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w973.png 973w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w863.png 863w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w753.png 753w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w643.png 643w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w533.png 533w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w423.png 423w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w313.png 313w,
+https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w203.png 203w"
+		         	sizes="(max-width: 753px) 100vw, 753px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/gmail-email-wysiwyg_w973.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Gmailのメール作成インターフェース</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<p>そしていま？</p>
+
+	<p><a href="/tools/markdown-here/" target="_blank">Markdown Here</a>はこれらの場合の解決策です。 Markdownフォーマットを使用してe-mailsを記述できるようにするブラウザーの拡張機能。</p>
+
+	<p>それは無料です？</p>
+
+	<p>はい、Markdown Hereは無料のオープンソースであり、Markdownを即座にHTMLに変換します。</p>
+
+
+	<h3 id="markdown-technical-docs">技術文書</h3>
+
+	<p>Markdownと技術文書は密接に関連しています。数え切れないほどの企業が<code class="lang-text">md</code>ファイルを使用してドキュメントを保存しています。</p>
+
+	<p><a href="https://github.com/" target="_blank">GitHub</a>は、Jekyllツールのサポートにより、ドキュメントをMarkdownに移行しました。さらに、世界で最も有名なアーカイブの1つである、GitHubのREADME.mdは、Markdownで構成されています。</p>
+
+	<div class="image-container">
+		<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/github-docs_w1280.webp 1280w,
+https://markdown.net.br/assets/img/intro/github-docs_w1126.webp 1126w,
+https://markdown.net.br/assets/img/intro/github-docs_w972.webp 972w,
+https://markdown.net.br/assets/img/intro/github-docs_w818.webp 818w,
+https://markdown.net.br/assets/img/intro/github-docs_w664.webp 664w,
+https://markdown.net.br/assets/img/intro/github-docs_w510.webp 510w,
+https://markdown.net.br/assets/img/intro/github-docs_w356.webp 356w,
+https://markdown.net.br/assets/img/intro/github-docs_w202.webp 202w"
+		         sizes="(max-width: 664px) 100vw, 664px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-GitHubドキュメント"
+		        	title="Markdownチュートリアル-GitHubドキュメント"
+		         	src="https://markdown.net.br/assets/img/intro/github-docs_w1280.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/github-docs_w1280.png 1280w,
+https://markdown.net.br/assets/img/intro/github-docs_w1126.png 1126w,
+https://markdown.net.br/assets/img/intro/github-docs_w972.png 972w,
+https://markdown.net.br/assets/img/intro/github-docs_w818.png 818w,
+https://markdown.net.br/assets/img/intro/github-docs_w664.png 664w,
+https://markdown.net.br/assets/img/intro/github-docs_w510.png 510w,
+https://markdown.net.br/assets/img/intro/github-docs_w356.png 356w,
+https://markdown.net.br/assets/img/intro/github-docs_w202.png 202w"
+		         	sizes="(max-width: 664px) 100vw, 664px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/github-docs_w1280.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>GitHubドキュメント</span>
+		</figcaption>
+		</figure>
+	</div>
+
+	<blockquote><strong>注</strong>：GitHubは、GitHub-flavored Markdownと呼ばれるMarkdownの小さなバリアントを使用します。</blockquote>
+
+	<p>技術文書を作成するために、以下のツールが役立ちます。</p>
+
+    <ul class="collection">
+		<li class="collection-item"><a href="/tools/jekyll/" target="_blank">Jekyll</a>: Markdownファイルからドキュメントを生成します。GitHubページを選択します。</li>
+		<li class="collection-item"><a href="/tools/mkdocs/" target="_blank">MkDocs</a>: シンプル、高速、使いやすい。ドキュメントの基礎は.mdファイルであり、構成ではYAMLファイルを使用します。</li>
+		<li class="collection-item"><a href="/tools/docusaurus/" target="_blank">Docusaurus</a>: 静的ウェブサイトジェネレーター、ドキュメントを作成するための最良のツールの1つ。 DocusaurusはFacebookによって開発され、バージョン管理、ドキュメント検索、さらには翻訳をサポートしています。</li>
+		<li class="collection-item"><a href="https://readthedocs.org/" target="_blank">Read The Docs</a>: Markdownファイルに基づいてドキュメントサイトを生成します。</li>
+		<li class="collection-item"><a href="https://vuepress.vuejs.org/" target="_blank">VuePress</a>: 名前からわかるように、VuePressは、Vueと関係があり、技術文書の作成を目的とした静的Webサイトのジェネレーターです。</li>
+	</ul>
+
+    <h2 id="markdown-flavors">Markdownのフレーバー</h2>
+
+    <p>1つの言語、スラング、発音、アクセントに存在するすべての異なる方言を想像してみてください。ネイティブスピーカーでも、理解しにくいことがあります。</p>
+
+    <div class="image-container">
+    	<figure class="mh-0">
+		    <picture class="lazy-img unloaded image-center">
+		    	<data-src class="responsive-img lazy-img"
+		         srcset="https://markdown.net.br/assets/img/intro/markdown-flavors_w893.webp 893w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w794.webp 794w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w695.webp 695w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w596.webp 596w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w497.webp 497w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w398.webp 398w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w299.webp 299w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w200.webp 200w"
+		         sizes="(max-width: 695px) 100vw, 695px"
+		         type="image/webp"></data-src>
+		    	<data-img class="responsive-img lazy-img"
+		        	alt="Markdownチュートリアル-Markdownフレーバー"
+		        	title="Markdownチュートリアル-Markdownフレーバー"
+		         	src="https://markdown.net.br/assets/img/intro/markdown-flavors_w893.png"
+		         	srcset="https://markdown.net.br/assets/img/intro/markdown-flavors_w893.png 893w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w794.png 794w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w695.png 695w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w596.png 596w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w497.png 497w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w398.png 398w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w299.png 299w,
+https://markdown.net.br/assets/img/intro/markdown-flavors_w200.png 200w"
+		         	sizes="(max-width: 695px) 100vw, 695px"></data-img>
+		        <a href="https://markdown.net.br/assets/img/intro/markdown-flavors_w893.png" target="_blank" class="cover-link"></a>
+		    </picture>
+			<figcaption class="caption">
+		    <i class="tiny material-icons">photo</i>&nbsp;<span>Markdown構文のバリエーション</span>
+		</figcaption>
+		</figure>
+    </div>
+
+    <p>言語と同様に、さまざまなプログラムでのMarkdownの実装も異なる可能性があります。違いがわずかであっても、混乱を招く可能性があります。</p>
+
+    <p>MarkdownのバリエーションはFlavorsと呼ばれます。たとえば、GitHubは、GitHub-flavored MarkdownまたはGFMと呼ばれるMarkdownの少し堅牢なバージョンを使用します。</p>
+
+    <p><a href="/basic-syntax/" target="_blank">基本構文</a>のみを使用するアプリケーションもあれば、基本構文と<a href="/extended-syntax/" target="_blank">拡張構文</a>の組み合わせを使用するアプリケーションもあります。最後に、両方の要素を散発的に実装するアプリケーションもあります。</p>
+
+    <p>何をすべきか？</p>
+
+    <p>アプリケーションを理解する最良の方法は、そのドキュメントを参照することです。古き良き試行錯誤の戦術を使用することもできます。 Markdownのどの要素が各アプリケーションと互換性があるかをリストしたツールのリストも参照してください。</p>
+
+    <p>結局のところ、最良のオプションは、<a href="/tools/dillinger/" target="_blank">Dillinger</a>や<a href="/tools/stackedit/" target="_blank">StackEdit</a>など、可能な限り最高の互換性を提供するプログラムを使用することです。</p>
+
+    <p>Markdownフレーバーの例としては、<a href="https://github.github.com/gfm/" target="_blank">GFM（GitHub-flavored Markdown）</a>;があります。 <a href="https://fletcherpenney.net/multimarkdown/" targer="_blank">MultiMarkdown</a>; <a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank">Markdown Extra</a>、<a href="https://kramdown.gettalong.org/" target="_blank">Kramdown</a>。</p>
+
+    <h2 id="markdown-conclusion">結論</h2>
+
+    <p>この記事では、Markdownの基本的な側面、それを使用して何ができるか、およびそのさまざまな実装について学習しました。</p>
+
+    <p>次のステップは、言語の<a href="/basic-syntax/">基本構文</a>を学習することです。すでに自信がある場合は、<a href="/tools/">ツール</a>セクションを参照してMarkdownの使用を開始してください。</p>
+  </div> <!-- FIM DO CONTEÚDO PRINCIPAL -->
+</div>
+            <div class="col-12">
+  <ul class="collapsible">
+    <li class="active">
+      <div class="collapsible-header grey lighten-4"><i class="material-icons">share</i>共有</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a href="#!" class="collection-item" data-sharer="twitter" data-title="Markdown®イントロ：基本的な言語の概念[すばやく簡単]" data-hashtags="markdown" data-url="https://ja.markdown.net.br/intro/">
+            <i class="fab fa-twitter color-twitter"></i>&nbsp;&nbsp;Twitterで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="facebook" data-hashtag="markdown" data-url="https://ja.markdown.net.br/intro/">
+            <i class="fab fa-facebook color-facebook"></i>&nbsp;&nbsp;Facebookでシェア
+          </a>
+          <a href="#!" class="collection-item" data-sharer="linkedin" data-url="https://ja.markdown.net.br/intro/">
+            <i class="fab fa-linkedin color-linkedin"></i>&nbsp;&nbsp;Linkedinで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="email" data-title="Markdown®イントロ：基本的な言語の概念[すばやく簡単]" data-url="https://ja.markdown.net.br/intro/" data-subject="こんにちは！はい？このマークダウンガイドは非常にわかりやすいと思いました。できる限り見てください。それがもっと役立つことを願っています。" data-to="email@host.com">
+            <i class="fas fa-envelope color-email"></i>&nbsp;&nbsp;メールで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="whatsapp" data-title="Markdown®イントロ：基本的な言語の概念[すばやく簡単]" data-url="https://ja.markdown.net.br/intro/">
+            <i class="fab fa-whatsapp color-whatsapp"></i>&nbsp;&nbsp;Whatsappで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="telegram" data-title="Markdown®イントロ：基本的な言語の概念[すばやく簡単]" data-url="https://ja.markdown.net.br/intro/" data-to="(00) 99999-9999">
+            <i class="fab fa-telegram color-telegram"></i>&nbsp;&nbsp;電報で共有
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+          </div>
+          <!-- Table of contents -->
+          <div class="col hide-on-small-only m3 xl3 offset-xl1">
+            <div class="toc-wrapper" id="sticky-navigator">
+            </div>
+          </div>
+          <!-- Table of contents -->
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer docs-footer">
+  <div class="container">
+    <div class="row" style="margin-bottom: 0;">
+      <div class="col s12 m10 offset-m1">
+        <div class="row">
+          <div class="col l4 s12" style="overflow: hidden;">
+            <a href="https://twitter.com/CodigoNetwork" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">@CodigoNetworkをフォローする</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div>
+            &copy;&nbsp;<noscript>2020</noscript><script type="text/javascript">document.write(new Date().getFullYear());</script> <strong>Markdown</strong>, 全著作権所有.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--  Scripts-->
+    <script src="/assets/js/bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.js" integrity="sha256-1baFoczEXwdtWBiZ6gbu7W1kn6XfPgKY4LkQQYNHTkM=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-asciidoc.min.js" integrity="sha256-Z6qgXS53J00CrN9qHl3CxGqX2A3qs6HwGi96bnk2e4w=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-markdown.min.js" integrity="sha256-LVbOCHxYsNr9pF5KGdB2NphtO2FKM92SGFxRkWc9Ovg=" crossorigin="anonymous"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.youtube.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.picture.min.js"></script>
+    <!-- Lightbox das imagens -->
+    <script>
+      $(document).ready(function(){
+         $('.materialboxed').materialbox();
+
+         $('picture.lazy-img.unloaded, img.lazy-img, iframe.lazy-yt.unloaded').Lazy({
+             effect: 'fadeIn',
+             effectTime: 1000
+             // called after an element was successfully handled
+             // afterLoad: function(element) {
+             // // Remove a animação do loader da imagem
+             //     // element.height(element.closest('.img-lazy-container').find('.image-placeholder').height());
+
+             //     element.removeClass('unloaded');
+             // }
+         });
+       });
+      anchors.add("h2, h3, h5");
+      $('#sticky-navigator').stickyNavigator();
+    </script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+</html>

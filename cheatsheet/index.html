@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69958365-6"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-69958365-6');
+    </script>
+    <!-- Auto ads - Google -->
+    <script data-ad-client="ca-pub-3427355473051563" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="canonical" href="https://ja.markdown.net.br/cheatsheet/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="author" content="Robert Salles">
+    <meta name="description" content="Markdown構文への完全でクイックなリファレンスとともに、すべてのプログラマーが必要とするガイド。このチートシートを使用して、見出し/タイトル、段落、リストなどを作成します。">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ja.markdown.net.br/cheatsheet/">
+    <meta property="og:title" content="Markdown™Cheatsheet：プログラマー向けクイックリファレンス">
+    <meta property="og:description" content="Markdown構文への完全でクイックなリファレンスとともに、すべてのプログラマーが必要とするガイド。このチートシートを使用して、見出し/タイトル、段落、リストなどを作成します。">
+    <meta property="og:image" content="https://markdown.net.br/assets/img/markdown.jpg">
+
+    <title>Markdown™Cheatsheet：プログラマー向けクイックリファレンス</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2196f3">
+    <meta name="msapplication-TileColor" content="#2196f3">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#2196f3">
+    <!-- CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.css" integrity="sha256-nOfkEPu/TzBvIxN8D/vW8weOUczzDbxRjgik/hA2hBI=" crossorigin="anonymous" />
+    <style type="text/css">
+    	.mv-40 {
+    		margin-top: 40px;
+    		margin-bottom: 40px;
+    	}
+
+    	img[src=""],
+    	img:not([src]) {
+    	  visibility: hidden;
+    	}
+
+    	.caption {
+    	    display: flex;
+    	    justify-content: center;
+    	    align-items: center;
+    	    margin: 10px 0;
+    	    color: hsl(0deg 0% 33%);
+    	    font-style: italic;
+    	    font-size: 75%;
+    	}
+
+    	picture {
+    		display: block;
+    		position: relative;
+    	}
+
+    	.cover-link {
+    		position: absolute;
+    		top: 0;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    	}
+    </style>
+  </head>
+  <body class="themes" cz-shortcut-listen="true">
+    <header>
+      <div class="container">
+  <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger waves-effect waves-light circle">
+  <i class="material-icons">menu</i>
+  </a>
+</div>
+<ul id="nav-mobile" class="sidenav">
+  <li class="logo blue">
+    <a id="logo-container" href="/" class="brand-logo">
+    <img src="https://markdown.net.br/assets/img/markdown-logo-transparent.svg" height="100">
+    </a>
+  </li>
+  <li class="push-it-down"></li>
+  <li class="search white">
+    <div class="search-wrapper">
+      <input id="search" placeholder="Buscar"><i class="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li>
+  <li class="bold white">
+    <a href="/intro/" class="waves-effect waves-blue"><i class="tiny material-icons">child_care</i>前書き</a>
+  </li>
+  <li class="bold white">
+    <a href="/basic-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">short_text</i>基本構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/extended-syntax/" class="waves-effect waves-blue"><i class="tiny material-icons">format_align_left</i>拡張構文</a>
+  </li>
+  <li class="bold white">
+    <a href="/cheatsheet/" class="waves-effect waves-blue"><i class="tiny material-icons">help_outline</i>クイックリファレンス</a>
+  </li>
+  <li class="bold white">
+    <a href="/tools/" class="waves-effect waves-blue"><i class="tiny material-icons">card_travel</i>ツール</a>
+  </li>
+</ul>
+    </header>
+    <main>
+      <div class="section" id="index-banner">
+        <div class="container">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m6 l7 offset-m1 offset-l1">
+              <h1>Markdown Cheatsheet</h1>
+              <h4 class="light">Markdownを使用するすべてのプログラマーにとって不可欠なクイックリファレンスガイド。</h4>
+              <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" href="https://markdown.net.br/">
+                      <span itemprop="name">Markdown</span></a>
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li>
+<i class="fas fa-chevron-right chevron-separator"></i>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<span itemprop="name">Markdown Cheatsheet</span>
+<meta itemprop="position" content="2" />
+</li>
+
+              </ol>
+            </div>
+            <div class="col s12 m5 l4 mt-s-30" align="center">
+            	<!-- square-fixed-300-250 -->
+            	<ins class="adsbygoogle"
+            	     style="display:inline-block;width:300px;height:250px"
+            	     data-ad-client="ca-pub-3427355473051563"
+            	     data-ad-slot="1035906960"></ins>
+            	<script>
+            	     (adsbygoogle = window.adsbygoogle || []).push({});
+            	</script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!--  Outer row  -->
+        <div class="row">
+          <div class="section col s12 m8 offset-m1 xl7 offset-xl1">
+            <div class="row scrollspy">
+  <div class="col s12">
+    <h2 id="visao-geral">概要概要</h2>
+
+    <p>Markdown構文に関してメモリを更新する必要がありますか？優秀な！</p>
+
+    <p>以下に、言語の最も一般的で使用される要素を示します。</p>
+
+    <p class="mv-40">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-3427355473051563"
+             data-ad-slot="3854885260"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </p>
+
+	<p>ここでは、Markdownの基本のみを示しています。詳細が必要な場合は、<a href="/basic-syntax/" target="_blank">基本構文</a>および<a href="/extended-syntax/" target="_blank">拡張構文</a>のセクションを参照してください。</p>
+
+    <h2 id="sintaxe-basica">基本構文</h2>
+
+    <p>Markdownの根底にある要素を以下に示します。これらのフォーマット要素は元の言語ドキュメントで説明されており、プログラムの大部分がそれらをサポートしています。</p>
+
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>素子</th>
+          <th>Markdown</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/basic-syntax/#headings" target="_blank">タイトル</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code># H1
+## H2
+### H3</code></pre>
+	<a href="/editor/?markdown=%23%20H1%0D%0A%23%23%20H2%0D%0A%23%23%23%20H3" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#bold" target="_blank">大胆な</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>**太字**</code></pre>
+	<a href="/editor/?markdown=%2A%2A%E5%A4%AA%E5%AD%97%2A%2A" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#italics" target="_blank">イタリック</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>*イタリックテキスト*</code></pre>
+	<a href="/editor/?markdown=%2A%E3%82%A4%E3%82%BF%E3%83%AA%E3%83%83%E3%82%AF%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%2A" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#blockquote" target="_blank">Blockquote</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>&gt; Blockquote</code></pre>
+	<a href="/editor/?markdown=>%20Blockquote" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#lists-ordered" target="_blank">注文リスト</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>1. 最初の要素
+2. 2番目の要素
+3. 3番目の要素</code></pre>
+	<a href="/editor/?markdown=1%2E%20%E6%9C%80%E5%88%9D%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A2%2E%202%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0%0D%0A3%2E%203%E7%95%AA%E7%9B%AE%E3%81%AE%E8%A6%81%E7%B4%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#lists-unordered" target="_blank">順不同リスト</a></td>
+          <td>
+            <div class="code-example">
+	<pre class="lang-markdown"><code>- 最初のアイテム
+- 2番目のアイテム
+- 3番目のアイテム</code></pre>
+	<a href="/editor/?markdown=%2D%20%E6%9C%80%E5%88%9D%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%0D%0A%2D%202%E7%95%AA%E7%9B%AE%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%0D%0A%2D%203%E7%95%AA%E7%9B%AE%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#code" target="_blank">コード</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>`コード`</code></pre>
+	<a href="/editor/?markdown=`%E3%82%B3%E3%83%BC%E3%83%89`" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#horizontal-rule" target="_blank">水平線</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>---</code></pre>
+	<a href="/editor/?markdown=%2D%2D%2D" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#links" target="_blank">Link</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>[題名](https://ja.markdown.net.br)</code></pre>
+	<a href="/editor/?markdown=[%E9%A1%8C%E5%90%8D]%28https:%2F%2Fja%2Emarkdown%2Enet%2Ebr%29" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/basic-syntax/#images" target="_blank">画像</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>![代替テキスト](https://markdown.net.br/assets/img/basic-syntax/markdown-logo-small.png)</code></pre>
+	<a href="/editor/?markdown=%21[%E4%BB%A3%E6%9B%BF%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88]%28https:%2F%2Fmarkdown%2Enet%2Ebr%2Fassets%2Fimg%2Fbasic%2Dsyntax%2Fmarkdown%2Dlogo%2Dsmall%2Epng%29" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="sintaxe-estendida">拡張構文</h2>
+
+    <p>Markdownの進化に伴い、他の要素が実装され、ドキュメントをフォーマットするためのオプションの範囲が充実しました。一方では、もう少し複雑ですが、他方では、言語はさまざまなドキュメントを構築するためのより多くのリソースを獲得しました。</p>
+
+    <p>Markdown用に開発されたすべてのアプリケーションがこれらの要素をサポートしているわけではないことに注意してください。プログラムのドキュメントまたは<a href="/tools/" target="_blank">ツール</a>セクションを参照することをお勧めします。</p>
+
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>素子</th>
+          <th>Markdown</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-tables" target="_blank">テーブル</a></td>
+          <td>
+          	<div class="code-example">
+	<pre class="lang-markdown"><code>| 題名  | 題名 |
+| --------| ------ |
+| テキスト   | テキスト  |
+| テキスト | テキスト  |</code></pre>
+	<a href="/editor/?markdown=|%20%E9%A1%8C%E5%90%8D%20%20|%20%E9%A1%8C%E5%90%8D%20|%0D%0A|%20%2D%2D%2D%2D%2D%2D%2D%2D|%20%2D%2D%2D%2D%2D%2D%20|%0D%0A|%20%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20%20%20|%20%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20%20|%0D%0A|%20%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20|%20%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20%20|" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#fenced-code-block" target="_blank">フェンスで囲まれたコードブロック</a></td>
+          <td>
+          	<div class="code-example">
+	<pre class="lang-markdown"><code>```
+{
+    "名前": "Robert",
+    "姓": "Salles",
+    "年齢": 25
+}
+```</code></pre>
+	<a href="/editor/?markdown=```%0D%0A{%0D%0A%20%20%20%20%22%E5%90%8D%E5%89%8D%22:%20%22Robert%22%2C%0D%0A%20%20%20%20%22%E5%A7%93%22:%20%22Salles%22%2C%0D%0A%20%20%20%20%22%E5%B9%B4%E9%BD%A2%22:%2025%0D%0A}%0D%0A```" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+      		</td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-footnotes" target="_blank">脚注</a></td>
+          <td>
+          	<pre class="lang-markdown"><code>これが脚注付きの文です。 [^1]
+
+[^1]: これが脚注です。</code></pre>
+      		</td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-title-id" target="_blank">タイトルID</a></td>
+          <td><pre class="lang-markdown"><code>### 私のタイトル {#id}</code></pre></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-definition-lists" target="_blank">定義のリスト</a></td>
+          <td>
+          	<pre class="lang-markdown"><code>期間
+: 定義</code></pre>
+      		</td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-strikethrough" target="_blank">取り消し線</a></td>
+          <td><div class="code-example">
+	<pre class="lang-markdown"><code>~~Markdownを学ぶのは難しいです。~~</code></pre>
+	<a href="/editor/?markdown=~~Markdown%E3%82%92%E5%AD%A6%E3%81%B6%E3%81%AE%E3%81%AF%E9%9B%A3%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%80%82~~" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div></td>
+        </tr>
+        <tr>
+          <td><a href="/extended-syntax/#markdown-task-lists" target="_blank">タスクリスト</a></td>
+          <td>
+          	<div class="code-example">
+	<pre class="lang-markdown"><code>- [x] 寝室を掃除する
+- [ ] 30分間歩く
+- [ ] サイトを更新する</code></pre>
+	<a href="/editor/?markdown=%2D%20[x]%20%E5%AF%9D%E5%AE%A4%E3%82%92%E6%8E%83%E9%99%A4%E3%81%99%E3%82%8B%0D%0A%2D%20[%20]%2030%E5%88%86%E9%96%93%E6%AD%A9%E3%81%8F%0D%0A%2D%20[%20]%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B" target="_blank" class="test-code waves-effect waves-light btn orange darken-4 pr-25">
+	    <b><span data-str="true">自分で試してみてください</span></b>&nbsp;<i class="fas fa-external-link-alt outter-icon-code"></i>
+	</a>
+</div>
+      		</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> <!-- FIM DO CONTEÚDO PRINCIPAL -->
+</div>
+            <div class="col-12">
+  <ul class="collapsible">
+    <li class="active">
+      <div class="collapsible-header grey lighten-4"><i class="material-icons">share</i>共有</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a href="#!" class="collection-item" data-sharer="twitter" data-title="Markdown™Cheatsheet：プログラマー向けクイックリファレンス" data-hashtags="markdown" data-url="https://ja.markdown.net.br/cheatsheet/">
+            <i class="fab fa-twitter color-twitter"></i>&nbsp;&nbsp;Twitterで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="facebook" data-hashtag="markdown" data-url="https://ja.markdown.net.br/cheatsheet/">
+            <i class="fab fa-facebook color-facebook"></i>&nbsp;&nbsp;Facebookでシェア
+          </a>
+          <a href="#!" class="collection-item" data-sharer="linkedin" data-url="https://ja.markdown.net.br/cheatsheet/">
+            <i class="fab fa-linkedin color-linkedin"></i>&nbsp;&nbsp;Linkedinで共有する
+          </a>
+          <a href="#!" class="collection-item" data-sharer="email" data-title="Markdown™Cheatsheet：プログラマー向けクイックリファレンス" data-url="https://ja.markdown.net.br/cheatsheet/" data-subject="こんにちは！はい？このマークダウンガイドは非常にわかりやすいと思いました。できる限り見てください。それがもっと役立つことを願っています。" data-to="email@host.com">
+            <i class="fas fa-envelope color-email"></i>&nbsp;&nbsp;メールで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="whatsapp" data-title="Markdown™Cheatsheet：プログラマー向けクイックリファレンス" data-url="https://ja.markdown.net.br/cheatsheet/">
+            <i class="fab fa-whatsapp color-whatsapp"></i>&nbsp;&nbsp;Whatsappで共有
+          </a>
+          <a href="#!" class="collection-item" data-sharer="telegram" data-title="Markdown™Cheatsheet：プログラマー向けクイックリファレンス" data-url="https://ja.markdown.net.br/cheatsheet/" data-to="(00) 99999-9999">
+            <i class="fab fa-telegram color-telegram"></i>&nbsp;&nbsp;電報で共有
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+          </div>
+          <!-- Table of contents -->
+          <div class="col hide-on-small-only m3 xl3 offset-xl1">
+            <div class="toc-wrapper" id="sticky-navigator">
+            </div>
+          </div>
+          <!-- Table of contents -->
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer docs-footer">
+  <div class="container">
+    <div class="row" style="margin-bottom: 0;">
+      <div class="col s12 m10 offset-m1">
+        <div class="row">
+          <div class="col l4 s12" style="overflow: hidden;">
+            <a href="https://twitter.com/CodigoNetwork" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">@CodigoNetworkをフォローする</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div>
+            &copy;&nbsp;<noscript>2020</noscript><script type="text/javascript">document.write(new Date().getFullYear());</script> <strong>Markdown</strong>, 全著作権所有.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--  Scripts-->
+    <script src="/assets/js/bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/show-invisibles/prism-show-invisibles.min.js" integrity="sha256-1baFoczEXwdtWBiZ6gbu7W1kn6XfPgKY4LkQQYNHTkM=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-asciidoc.min.js" integrity="sha256-Z6qgXS53J00CrN9qHl3CxGqX2A3qs6HwGi96bnk2e4w=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-markdown.min.js" integrity="sha256-LVbOCHxYsNr9pF5KGdB2NphtO2FKM92SGFxRkWc9Ovg=" crossorigin="anonymous"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.youtube.min.js"></script>
+    <script src="/assets/js/vendor/jquery.lazy@1.7.9/jquery.lazy.picture.min.js"></script>
+    <!-- Lightbox das imagens -->
+    <script>
+      $(document).ready(function(){
+         $('.materialboxed').materialbox();
+
+         $('picture.lazy-img.unloaded, img.lazy-img, iframe.lazy-yt.unloaded').Lazy({
+             effect: 'fadeIn',
+             effectTime: 1000
+             // called after an element was successfully handled
+             // afterLoad: function(element) {
+             // // Remove a animação do loader da imagem
+             //     // element.height(element.closest('.img-lazy-container').find('.image-placeholder').height());
+
+             //     element.removeClass('unloaded');
+             // }
+         });
+       });
+      anchors.add("h2, h3, h5");
+      $('#sticky-navigator').stickyNavigator();
+    </script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+</html>
